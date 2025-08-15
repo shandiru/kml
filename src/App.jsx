@@ -5,6 +5,7 @@ import Footer from "./components/Footer.jsx";
 
 import Home from "./Page/Home.jsx";
 import About from "./Page/About.jsx";
+import InsuranceRepairs from "./Page/Insurance-repairs.jsx";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/services/insurance-repairs" element={<InsuranceRepairs />} />
           {/* add more pages as needed */}
         </Routes>
       </main>
