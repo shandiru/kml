@@ -8,6 +8,7 @@ import About from "./Page/About.jsx";
 import InsuranceRepairs from "./Page/Insurance-repairs.jsx";
 import Bodyworkdents from "./Page/Bodywork-dents.jsx";
 import CollisionRepairs from "./Page/collision-repairs.jsx";
+import SpecialtyServices from "./Page/specialty-services.jsx"; // Importing the Specialty Services page
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/services/insurance-repairs" element={<InsuranceRepairs />} />
           <Route path="/services/bodywork-dents" element={<Bodyworkdents />} />
           <Route path="/services/collision-repairs" element={<CollisionRepairs />} />
+          <Route path="/services/specialty-services" element={<SpecialtyServices />} />
           {/* add more pages as needed */}
         </Routes>
       </main>
