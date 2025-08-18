@@ -50,7 +50,10 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Brand */}
           <Link to="/" className="flex items-baseline">
-            <h1 className="text-2xl font-bold font-sans" style={{ color: BRAND_GREEN }}>
+            <h1
+              className="text-2xl font-bold font-sans"
+              style={{ color: BRAND_GREEN }}
+            >
               KMLservices
             </h1>
             <span
@@ -88,9 +91,17 @@ export default function Header() {
                     <NavLink
                       key={s.label}
                       to={s.to}
-                      className="block px-4 py-2 text-sm hover:bg-gray-100"
+                      className="block px-4 py-2 text-sm transition-colors"
                       style={{ color: "#1f2937" }}
                       onClick={() => setServicesOpen(false)}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = GREEN;
+                        e.currentTarget.style.color = "#fff";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = "transparent";
+                        e.currentTarget.style.color = "#1f2937";
+                      }}
                     >
                       {s.label}
                     </NavLink>
@@ -99,14 +110,26 @@ export default function Header() {
               )}
             </div>
 
-            <NavLink to="/about" className="font-serif transition-colors" style={navStyle}>
+            <NavLink
+              to="/about"
+              className="font-serif transition-colors"
+              style={navStyle}
+            >
               About
             </NavLink>
 
-            <a href="/#process" className="font-serif transition-colors" style={{ color: "#1f2937" }}>
+            <a
+              href="/#process"
+              className="font-serif transition-colors"
+              style={{ color: "#1f2937" }}
+            >
               Our Process
             </a>
-            <a href="/#contact" className="font-serif transition-colors" style={{ color: "#1f2937" }}>
+            <a
+              href="/#contact"
+              className="font-serif transition-colors"
+              style={{ color: "#1f2937" }}
+            >
               Contact
             </a>
           </nav>
@@ -116,8 +139,12 @@ export default function Header() {
             href="/#contact"
             className="hidden md:inline-flex items-center justify-center rounded-md text-sm font-medium h-9 px-4 py-2 shadow-xs font-serif"
             style={{ backgroundColor: GREEN, color: "#ffffff" }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = GREEN_HOVER)}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = GREEN)}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.backgroundColor = GREEN_HOVER)
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.backgroundColor = GREEN)
+            }
           >
             Get Quote
           </a>
@@ -129,11 +156,25 @@ export default function Header() {
             onClick={() => setOpen((o) => !o)}
           >
             {open ? (
-              <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+                fill="none"
+              >
                 <path d="M18 6 6 18M6 6l12 12" />
               </svg>
             ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+                fill="none"
+              >
                 <path d="M3 6h18M3 12h18M3 18h18" />
               </svg>
             )}
@@ -142,7 +183,10 @@ export default function Header() {
 
         {/* Mobile drawer */}
         {open && (
-          <div className="md:hidden border-t mt-3" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
+          <div
+            className="md:hidden border-t mt-3"
+            style={{ borderColor: "rgba(0,0,0,0.08)" }}
+          >
             <nav className="py-3 flex flex-col">
               {/* Services dropdown for mobile */}
               <details className="px-2 py-2">
@@ -152,9 +196,17 @@ export default function Header() {
                     <NavLink
                       key={s.label}
                       to={s.to}
-                      className="block py-1 text-sm"
+                      className="block py-1 text-sm transition-colors px-2 rounded"
                       style={{ color: "#1f2937" }}
                       onClick={() => setOpen(false)}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = GREEN;
+                        e.currentTarget.style.color = "#fff";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = "transparent";
+                        e.currentTarget.style.color = "#1f2937";
+                      }}
                     >
                       {s.label}
                     </NavLink>
@@ -162,19 +214,41 @@ export default function Header() {
                 </div>
               </details>
 
-              <NavLink to="/about" className="px-2 py-2 font-serif" style={({ isActive }) => ({ color: isActive ? GREEN : "#1f2937" })} onClick={() => setOpen(false)}>
+              <NavLink
+                to="/about"
+                className="px-2 py-2 font-serif"
+                style={({ isActive }) => ({
+                  color: isActive ? GREEN : "#1f2937",
+                })}
+                onClick={() => setOpen(false)}
+              >
                 About
               </NavLink>
-              <a href="/#process" className="px-2 py-2 font-serif" style={{ color: "#1f2937" }} onClick={() => setOpen(false)}>
+              <a
+                href="/#process"
+                className="px-2 py-2 font-serif"
+                style={{ color: "#1f2937" }}
+                onClick={() => setOpen(false)}
+              >
                 Our Process
               </a>
-              <a href="/#contact" className="px-2 py-2 font-serif" style={{ color: "#1f2937" }} onClick={() => setOpen(false)}>
+              <a
+                href="/#contact"
+                className="px-2 py-2 font-serif"
+                style={{ color: "#1f2937" }}
+                onClick={() => setOpen(false)}
+              >
                 Contact
               </a>
             </nav>
 
             <div className="pb-4 px-2">
-              <a href="/#contact" className="inline-flex w-full items-center justify-center rounded-md text-sm font-medium h-10 px-4 py-2 font-serif" style={{ backgroundColor: GREEN, color: "#ffffff" }} onClick={() => setOpen(false)}>
+              <a
+                href="/#contact"
+                className="inline-flex w-full items-center justify-center rounded-md text-sm font-medium h-10 px-4 py-2 font-serif"
+                style={{ backgroundColor: GREEN, color: "#ffffff" }}
+                onClick={() => setOpen(false)}
+              >
                 Get Quote
               </a>
             </div>
