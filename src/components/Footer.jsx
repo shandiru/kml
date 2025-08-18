@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -12,9 +13,10 @@ export default function Footer() {
               Your trusted partner for professional insurance repairs, collision
               work, and complete automotive repair services.
             </p>
+
             <div className="space-y-2 text-sm">
+              {/* Phone */}
               <div className="flex items-center gap-2">
-                {/* Phone Icon */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-4 w-4"
@@ -24,13 +26,21 @@ export default function Footer() {
                   strokeWidth={2}
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  aria-hidden="true"
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
-                <span className="font-serif">0800 123 4567</span>
+                <a
+                  href="tel:08001234567"
+                  className="font-serif hover:underline underline-offset-4"
+                  aria-label="Call 0800 123 4567"
+                >
+                  0800 123 4567
+                </a>
               </div>
+
+              {/* Email */}
               <div className="flex items-center gap-2">
-                {/* Email Icon */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-4 w-4"
@@ -40,42 +50,83 @@ export default function Footer() {
                   strokeWidth={2}
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  aria-hidden="true"
                 >
-                  <rect
-                    width="20"
-                    height="16"
-                    x="2"
-                    y="4"
-                    rx="2"
-                  />
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                 </svg>
-                <span className="font-serif">info@kmlservices.co.uk</span>
+                <a
+                  href="mailto:info@kmlservices.co.uk"
+                  className="font-serif hover:underline underline-offset-4 break-all"
+                  aria-label="Email info@kmlservices.co.uk"
+                >
+                  info@kmlservices.co.uk
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Services */}
+          {/* Our Services (internal links with React Router) */}
           <div>
             <h4 className="font-semibold mb-4 font-sans">Our Services</h4>
             <ul className="space-y-2 text-sm opacity-90">
-              <li className="font-serif">Insurance Repairs</li>
-              <li className="font-serif">Collision Repairs</li>
-              <li className="font-serif">Bodywork &amp; Dents</li>
-              <li className="font-serif">End of Lease Repairs</li>
-              <li className="font-serif">Windscreen Replacement</li>
+              <li className="font-serif">
+                <Link to="/services/insurance-repairs" className="hover:underline underline-offset-4">
+                  Insurance Repairs
+                </Link>
+              </li>
+              <li className="font-serif">
+                <Link to="/services/collision-repairs" className="hover:underline underline-offset-4">
+                  Collision Repairs
+                </Link>
+              </li>
+              <li className="font-serif">
+                <Link to="/services/bodywork-dents" className="hover:underline underline-offset-4">
+                  Bodywork &amp; Dents
+                </Link>
+              </li>
+              <li className="font-serif">
+                <Link to="/services/specialty-services" className="hover:underline underline-offset-4">
+                  End of Lease Repairs
+                </Link>
+              </li>
+              <li className="font-serif">
+                <Link to="/services/claims-support" className="hover:underline underline-offset-4">
+                  Windscreen Replacement
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Support (link to best-matching routes or placeholders) */}
           <div>
             <h4 className="font-semibold mb-4 font-sans">Support</h4>
             <ul className="space-y-2 text-sm opacity-90">
-              <li className="font-serif">24/7 Accident Support</li>
-              <li className="font-serif">Insurance Claims</li>
-              <li className="font-serif">Courtesy Cars</li>
-              <li className="font-serif">Free Estimates</li>
-              <li className="font-serif">ADAS Calibration</li>
+              <li className="font-serif">
+                <Link to="/support/accident-support" className="hover:underline underline-offset-4">
+                  24/7 Accident Support
+                </Link>
+              </li>
+              <li className="font-serif">
+                <Link to="/services/claims-support" className="hover:underline underline-offset-4">
+                  Insurance Claims
+                </Link>
+              </li>
+              <li className="font-serif">
+                <Link to="/support/courtesy-cars" className="hover:underline underline-offset-4">
+                  Courtesy Cars
+                </Link>
+              </li>
+              <li className="font-serif">
+                <Link to="/support/free-estimates" className="hover:underline underline-offset-4">
+                  Free Estimates
+                </Link>
+              </li>
+              <li className="font-serif">
+                <Link to="/support/adas-calibration" className="hover:underline underline-offset-4">
+                  ADAS Calibration
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -84,7 +135,13 @@ export default function Footer() {
             <h4 className="font-semibold mb-4 font-sans">Emergency Contact</h4>
             <div className="bg-green-900/40 p-4 rounded">
               <p className="text-sm mb-2 font-serif">Accident Helpline:</p>
-              <p className="text-lg font-bold font-sans">0800 123 4567</p>
+              <a
+                href="tel:08001234567"
+                className="text-lg font-bold font-sans hover:underline underline-offset-4"
+                aria-label="Call Accident Helpline 0800 123 4567"
+              >
+                0800 123 4567
+              </a>
               <p className="text-xs mt-2 opacity-75 font-serif">
                 Available 24/7 for immediate assistance
               </p>

@@ -22,9 +22,9 @@ export default function App() {
           <Route path="/services/insurance-repairs" element={<InsuranceRepairs />} />
           <Route path="/services/bodywork-dents" element={<Bodyworkdents />} />
           <Route path="/services/collision-repairs" element={<CollisionRepairs />} />
-{/*           <Route path="/services/specialty-services" element={<SpecialtyServices />} />
-          <Route path="/services/claims-support" element={<ClaimsSupport />} /> */}
-          {/* add more pages as needed */}
+          <Route path="/services/specialty-services" element={<SpecialtyServices />} />
+          <Route path="/services/claims-support" element={<ClaimsSupport />} />
+
         </Routes>
       </main>
       <Footer />
