@@ -21,7 +21,7 @@ export default function HeroSection() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         {/* Call for Quote */}
                         <a
-                            href="tel:01234567890" // change this to your real phone number
+                            href="tel:0161 533 3003" // change this to your real phone number
                             className="inline-flex items-center justify-center gap-2 bg-green-800 text-white hover:bg-green-900 h-10 rounded-md px-6 font-serif text-sm font-medium transition-all"
                         >
                             <Phone className="h-5 w-5" />

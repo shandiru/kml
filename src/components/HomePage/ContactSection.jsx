@@ -116,7 +116,7 @@ export default function ContactSection() {
                       24/7 Accident Helpline
                     </p>
                     <p className="text-lg font-bold font-serif" style={{ color: COLORS.primary }}>
-                      0800 123 4567
+                      0161 533 3003
                     </p>
                   </div>
                 </div>
@@ -154,7 +154,7 @@ export default function ContactSection() {
                       Email
                     </p>
                     <p className="font-serif" style={{ color: COLORS.primary }}>
-                      info@kmlservices.co.uk
+                      kmlaccidentrepairecentreltd@gmail.com
                     </p>
                   </div>
                 </div>
@@ -175,7 +175,7 @@ export default function ContactSection() {
                       Service Area
                     </p>
                     <p className="font-serif" style={{ color: COLORS.body }}>
-                      Nationwide Coverage
+                      Haslam Street, Manchester, M24 2, United Kingdom, Middleton, United Kingdom
                     </p>
                   </div>
                 </div>

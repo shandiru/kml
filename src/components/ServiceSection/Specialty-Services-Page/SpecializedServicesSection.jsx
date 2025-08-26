@@ -21,11 +21,11 @@ export default function SpecializedServices() {
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                     {/* Call Button */}
                     <a
-                        href="tel:08001234567"
+                        href="tel:0161 533 3003"
                         className="inline-flex items-center justify-center gap-2 bg-green-800 text-white font-medium px-6 py-3 rounded-md shadow hover:bg-green-700 transition"
                     >
                         <FiPhone className="text-lg" />
-                        Call 0800 123 4567
+                        Call 0161 533 3003
                     </a>
 
                     {/* Book Consultation Button */}

@@ -6,7 +6,7 @@ const BRAND_GREEN = "#066a3c";
 export default function InsuranceCTA() {
   // Function to handle phone call
   const handleCall = () => {
-    window.location.href = "tel:08001234567"; // This will trigger the phone dialer
+    window.location.href = "tel:0161 533 3003"; // This will trigger the phone dialer
   };
 
   return (
@@ -29,7 +29,7 @@ export default function InsuranceCTA() {
               style={{ backgroundColor: BRAND_GREEN }}
             >
               <Phone className="h-5 w-5" />
-              Call 0800 123 4567
+              Call 0161 533 3003
             </button>
 
             {/* Request Callback Button */}

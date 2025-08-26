@@ -1,16 +1,17 @@
 import React from "react";
 
 export default function HeroSection() {
-  // Brand colors (tweak if you need)
   const PRIMARY = "#0b6b3a";      // deep green
   const PRIMARY_HOVER = "#085a31";
-  const FG = "#1f2937";           // heading text (slate-800)
-  const MUTED = "#4b5563";        // body text (slate-600)
+  const FG = "#1f2937";           // heading text
+  const MUTED = "#4b5563";        // body text
+
+  const PHONE = "01623 623 759";
+  const TEL_LINK = "tel:01623623759";
 
   return (
     <section
       className="relative py-20"
-      // very light green gradient like the screenshot
       style={{
         backgroundImage: `linear-gradient(135deg, rgba(11,107,58,0.05) 0%, rgba(6,104,60,0.05) 100%)`,
       }}
@@ -35,7 +36,6 @@ export default function HeroSection() {
             complete insurance claim support.
           </p>
 
-          {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <a
               href="#contact"
@@ -52,7 +52,7 @@ export default function HeroSection() {
             </a>
 
             <a
-              href="tel:08001234567"
+              href={TEL_LINK}
               className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium rounded-md h-10 px-6 font-serif border shadow-xs transition-colors"
               style={{
                 backgroundColor: "transparent",
@@ -70,11 +70,10 @@ export default function HeroSection() {
                 e.currentTarget.style.borderColor = "#e5e7eb";
               }}
             >
-              Call Now: 0800 123 4567
+              Call Now: {PHONE}
             </a>
           </div>
 
-          {/* Feature bullets */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             {/* Feature 1 */}
             <div className="flex flex-col items-center">
