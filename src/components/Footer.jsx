@@ -31,11 +31,11 @@ export default function Footer() {
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
                 <a
-                  href="tel:08001234567"
+                  href="tel:01615333003"
                   className="font-serif hover:underline underline-offset-4"
-                  aria-label="Call 0800 123 4567"
+                  aria-label="Call 0161 533 3003"
                 >
-                  0800 123 4567
+                  0161 533 3003
                 </a>
               </div>
 
@@ -56,17 +56,17 @@ export default function Footer() {
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                 </svg>
                 <a
-                  href="mailto:info@kmlservices.co.uk"
+                  href="mailto:kmlaccidentrepairecentreltd@gmail.com"
                   className="font-serif hover:underline underline-offset-4 break-all"
-                  aria-label="Email info@kmlservices.co.uk"
+                  aria-label="Email kmlaccidentrepairecentreltd@gmail.com"
                 >
-                  info@kmlservices.co.uk
+                  kmlaccidentrepairecentreltd@gmail.com
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Our Services (internal links with React Router) */}
+          {/* Our Services */}
           <div>
             <h4 className="font-semibold mb-4 font-sans">Our Services</h4>
             <ul className="space-y-2 text-sm opacity-90">
@@ -98,7 +98,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Support (link to best-matching routes or placeholders) */}
+          {/* Support */}
           <div>
             <h4 className="font-semibold mb-4 font-sans">Support</h4>
             <ul className="space-y-2 text-sm opacity-90">
@@ -136,11 +136,11 @@ export default function Footer() {
             <div className="bg-green-900/40 p-4 rounded">
               <p className="text-sm mb-2 font-serif">Accident Helpline:</p>
               <a
-                href="tel:08001234567"
+                href="tel:01615333003"
                 className="text-lg font-bold font-sans hover:underline underline-offset-4"
-                aria-label="Call Accident Helpline 0800 123 4567"
+                aria-label="Call Accident Helpline 0161 533 3003"
               >
-                0800 123 4567
+                0161 533 3003
               </a>
               <p className="text-xs mt-2 opacity-75 font-serif">
                 Available 24/7 for immediate assistance
