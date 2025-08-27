@@ -40,7 +40,7 @@ export default function EmergencyService() {
                                 style={{ backgroundColor: BRAND_GREEN }}
                             >
                                 <Phone className="h-5 w-5" />
-                                Emergency: 0800 123 4567
+                                Emergency: 0161 533 3003
                             </button>
 
                             {/* Support Button */}

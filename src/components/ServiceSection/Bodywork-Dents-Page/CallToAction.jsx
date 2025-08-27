@@ -22,7 +22,7 @@ const CallToAction = () => {
                             className="inline-flex items-center justify-center gap-2 text-sm font-medium h-10 rounded-md px-6 shadow hover:opacity-90 transition-all"
                         >
                             <Phone className="h-5 w-5" />
-                            Call 0800 123 4567
+                            Call 0161 533 3003
                         </button>
 
                         {/* Book Assessment Button */}

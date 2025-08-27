@@ -6,8 +6,8 @@ export default function HeroSection() {
   const FG = "#1f2937";           // heading text
   const MUTED = "#4b5563";        // body text
 
-  const PHONE = "01623 623 759";
-  const TEL_LINK = "tel:01623623759";
+  const PHONE = "0161 533 3003";
+  const TEL_LINK = "tel:0161 533 3003";
 
   return (
     <section
