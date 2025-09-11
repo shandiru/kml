@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaFacebookF, FaInstagram } from "react-icons/fa"; // ✅ Added
 
 export default function Footer() {
   return (
@@ -63,6 +64,28 @@ export default function Footer() {
                   kmlaccidentrepairecentreltd@gmail.com
                 </a>
               </div>
+            </div>
+
+            {/* Social Icons */}
+            <div className="flex gap-4 mt-6">
+              <a
+                href="https://web.facebook.com/KMLAccidentRepairCentre/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our Facebook page"
+                className="hover:text-blue-500 transition-colors"
+              >
+                <FaFacebookF size={18} />
+              </a>
+              <a
+                href="https://www.instagram.com/kml_accident_repair_centre/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our Instagram page"
+                className="hover:text-pink-500 transition-colors"
+              >
+                <FaInstagram size={18} />
+              </a>
             </div>
           </div>
 
