@@ -18,7 +18,7 @@ export default function EmergencyService() {
                 <div className="max-w-4xl mx-auto">
                     <div
                         className="rounded-lg p-8 text-center"
-                        style={{ backgroundColor: BG_LIGHT_MINT }}
+                        style={{ backgroundColor: "#f1f7ff" }}
                     >
                         <TriangleAlert
                             className="h-16 w-16 mx-auto mb-6"

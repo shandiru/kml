@@ -2,7 +2,7 @@ import React from "react";
 import { Phone } from "lucide-react";
 
 const BRAND_GREEN = "#066a3c";
-const LIGHT_GREEN_BG = "#e9f5f2"; // matches the image background color
+const LIGHT_GREEN_BG = "#f1f7ff"; // matches the image background color
 
 export default function BodyworkDentRepairs() {
     return (

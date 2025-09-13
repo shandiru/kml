@@ -4,7 +4,7 @@ import React from "react";
 
 export default function SpecialtyServices() {
     return (
-        <section className="bg-[#e8f3ef] py-16">
+        <section className="bg-[#f1f7ff] py-16">
             <div className="container mx-auto px-4">
                 <div className="max-w-4xl mx-auto text-center">
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-sans">

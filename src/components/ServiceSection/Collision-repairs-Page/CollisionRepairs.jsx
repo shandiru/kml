@@ -7,7 +7,7 @@ const PRIMARY_HOVER = "#055a33";
 // top-left:  #E9F6F1  → bottom-right: #E6F2EE
 export default function CollisionRepairs() {
     return (
-        <section className="bg-gradient-to-br from-[#E9F6F1] to-[#E6F2EE] py-16">
+        <section className="bg-[#f1f7ff] py-16">
             <div className="container mx-auto px-4">
                 <div className="max-w-4xl mx-auto text-center">
                     <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 font-sans">

@@ -7,7 +7,7 @@ const CallUsNow = () => {
                 <div className="max-w-4xl mx-auto">
                     <div
                         className="rounded-lg p-8 text-center"
-                        style={{ backgroundColor: "#E8F1ED" }}
+                        style={{ backgroundColor: "#f1f7ff" }}
                     >
                         {/* Phone Icon */}
                         <svg

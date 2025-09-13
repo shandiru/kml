@@ -3,7 +3,7 @@ import { Phone } from "lucide-react";
 
 export default function HeroSection() {
     return (
-        <section className="bg-gradient-to-br from-green-50 to-green-50 py-16">
+        <section className="bg-[#f1f7ff] py-16">
             <div className="container mx-auto px-4">
                 <div className="max-w-4xl mx-auto text-center">
                     {/* Title */}

@@ -3,7 +3,7 @@ import { FiPhone } from "react-icons/fi";
 
 export default function SpecializedServices() {
     return (
-        <section className="bg-[#F9FAFB] py-16">
+        <section className="bg-[#f1f7ff] py-16">
             <div className="max-w-3xl mx-auto text-center px-4">
                 {/* Heading */}
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">

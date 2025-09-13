@@ -2,7 +2,7 @@ import React from "react";
 
 const FAQSection = () => {
     return (
-        <section className="bg-[#F2F6FB] py-16"> {/* new light blue/gray background */}
+        <section className="bg-[#f1f7ff] py-16"> {/* new light blue/gray background */}
             <div className="container mx-auto px-4">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-3xl font-bold text-center mb-12 font-sans text-gray-900">

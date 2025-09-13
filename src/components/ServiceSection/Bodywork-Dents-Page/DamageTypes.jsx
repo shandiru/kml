@@ -56,7 +56,7 @@ export default function DamageTypes() {
     );
 
     return (
-        <section className="py-16" style={{ backgroundColor: BG_MUTED }}>
+        <section className="py-16" style={{ backgroundColor:"#f1f7ff" }}>
             <div className="container mx-auto px-4">
                 <div className="max-w-6xl mx-auto">
                     <h2
