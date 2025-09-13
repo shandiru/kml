@@ -31,9 +31,7 @@ export default function HeroSection() {
             className="text-xl mb-8 max-w-2xl mx-auto font-serif leading-relaxed"
             style={{ color: MUTED }}
           >
-            From the moment of accident to getting you back on the road, we
-            handle everything. Professional repairs, courtesy cars, and
-            complete insurance claim support.
+           From the moment of the accident to getting you back on the road, we handle everything — professional repairs, courtesy cars, and complete insurance claim support. It’s your right by law to choose your own repairer, so choose wisely — and let us take care of the rest.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">

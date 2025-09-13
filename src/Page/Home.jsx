@@ -5,7 +5,7 @@ import HeroSection from "../components/HomePage/HeroSection.jsx";
 import ServicesSection from "../components/HomePage/ServicesSection.jsx";
 import ProcessSection from "../components/HomePage/ProcessSection.jsx";
 import ContactSection from "../components/HomePage/ContactSection.jsx";
-
+import ReviewsSlider from "../components/HomePage/Testimonial.jsx";
 export default function Home() {
   return (
     <div>
@@ -22,6 +22,9 @@ export default function Home() {
       {/* Process */}
       <section id="process">
         <ProcessSection />
+      </section>
+      <section>
+        <ReviewsSlider />
       </section>
 
       {/* Contact */}
