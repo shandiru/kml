@@ -16,7 +16,7 @@ export default function ContactSection() {
     <section
       id="contact"
       className="py-20 px-4 sm:px-6 lg:px-8"
-      style={{ backgroundColor: COLORS.sectionBg }}
+      style={{ backgroundColor: "#f1f7ff" }}
     >
       <div className="max-w-4xl mx-auto">
         {/* Heading */}

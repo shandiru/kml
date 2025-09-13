@@ -11,10 +11,8 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative py-20"
-      style={{
-        backgroundImage: `linear-gradient(135deg, rgba(11,107,58,0.05) 0%, rgba(6,104,60,0.05) 100%)`,
-      }}
+      className="relative py-20 bg-[#f1f7ff]"
+      
     >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">

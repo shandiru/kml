@@ -8,7 +8,7 @@ export default function AboutSection() {
   };
 
   return (
-    <section style={{ backgroundColor: COLORS.bg }} className="py-16">
+    <section style={{ backgroundColor: "#f1f7ff" }} className="py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1
