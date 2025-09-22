@@ -25,7 +25,7 @@ export default function EmergencyService() {
                             style={{ color: BRAND_GREEN }}
                         />
                         <h2 className="text-3xl font-bold mb-4 font-sans">
-                            24/7 Emergency Service
+                             Emergency Service
                         </h2>
                         <p className="text-lg text-gray-700 mb-6 font-serif">
                             Accident happened? Don't worry - we're here to help. Our emergency
@@ -49,7 +49,7 @@ export default function EmergencyService() {
                                 style={{ borderColor: "#d1d5db" }}
                             >
                                 <Clock className="h-5 w-5" />
-                                24/7 Support
+                                 Support
                             </button>
                         </div>
                     </div>

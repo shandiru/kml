@@ -7,7 +7,7 @@ export default function JourneyAccidentToRepair() {
             n: 1,
             title: "Accident Happens - Call Us First",
             body:
-                "The moment you have an accident, call our 24/7 helpline. We'll guide you through the immediate steps, arrange recovery if needed, and start your claim process right away.",
+                "The moment you have an accident, call our  helpline. We'll guide you through the immediate steps, arrange recovery if needed, and start your claim process right away.",
         },
         {
             n: 2,

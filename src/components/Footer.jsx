@@ -127,7 +127,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm opacity-90">
               <li className="font-serif">
                 <Link to="/support/accident-support" className="hover:underline underline-offset-4">
-                  24/7 Accident Support
+                   Accident Support
                 </Link>
               </li>
               <li className="font-serif">
@@ -166,7 +166,7 @@ export default function Footer() {
                 0161 533 3003
               </a>
               <p className="text-xs mt-2 opacity-75 font-serif">
-                Available 24/7 for immediate assistance
+                Available  for immediate assistance
               </p>
             </div>
           </div>

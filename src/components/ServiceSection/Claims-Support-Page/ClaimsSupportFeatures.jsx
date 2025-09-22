@@ -53,7 +53,7 @@ export default function ClaimSupportFeatures() {
                             </svg>
                             <h3 className="font-semibold font-sans">Immediate Response</h3>
                             <p className="text-sm text-gray-600 font-serif px-4">
-                                24/7 emergency response from the moment you call us
+                                 emergency response from the moment you call us
                             </p>
                         </div>
 

@@ -13,7 +13,7 @@ export default function CollisionRepairProcess() {
         {
             number: 1,
             title: "Emergency Response",
-            text: "24/7 emergency response service. We arrange recovery, provide courtesy cars, and begin the claims process immediately."
+            text: " emergency response service. We arrange recovery, provide courtesy cars, and begin the claims process immediately."
         },
         {
             number: 2,

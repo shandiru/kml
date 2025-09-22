@@ -44,7 +44,7 @@ export default function ClaimsSupport() {
                             type="button"
                             className="inline-flex items-center justify-center gap-2 border border-gray-200 bg-white/60 backdrop-blur-[1px] text-gray-800 shadow-xs hover:bg-white h-10 rounded-md px-6 font-medium font-serif"
                         >
-                            24/7 Support Line
+                             Support Line
                         </button>
                     </div>
                 </div>

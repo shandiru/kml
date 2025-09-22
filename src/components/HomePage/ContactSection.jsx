@@ -45,7 +45,7 @@ export default function ContactSection() {
               <>
                 <ContactRow
                   icon={<PhoneIcon />}
-                  label="24/7 Accident Helpline"
+                  label=" Accident Helpline"
                   detail={
                     <a
                       href="tel:01615333003"

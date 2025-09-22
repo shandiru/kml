@@ -33,7 +33,7 @@ const CallUsNow = () => {
                         {/* Description */}
                         <p className="text-lg text-gray-700 mb-6 font-serif">
                             Don't wait - the sooner you call us, the sooner we can start
-                            helping you. Our claims specialists are available 24/7 to take
+                            helping you. Our claims specialists are available  to take
                             your call and begin the support process immediately.
                         </p>
 
@@ -78,7 +78,7 @@ const CallUsNow = () => {
                                     <circle cx="12" cy="12" r="10"></circle>
                                     <polyline points="12 6 12 12 16 14"></polyline>
                                 </svg>
-                                24/7 Claims Line
+                                 Claims Line
                             </button>
                         </div>
                     </div>
