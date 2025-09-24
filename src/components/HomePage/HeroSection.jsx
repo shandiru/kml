@@ -3,31 +3,29 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 
 export default function HeroSection() {
-  const PRIMARY = "#0b6b3a"; // deep green
-  const PRIMARY_HOVER = "#085a31";
-  const FG = "#1f2937"; // heading text
-  const MUTED = "#4b5563"; // body text
+  const PRIMARY = "#0096E6"; // KML brand blue
+  const PRIMARY_HOVER = "#007BC2"; // darker shade for hover
+  const FG = "#1f2937"; // headings (light mode)
+  const MUTED = "#4b5563"; // body text (light mode)
 
   const PHONE = "0161 533 3003";
   const TEL_LINK = "tel:0161 533 3003";
 
   useEffect(() => {
-    // Initialize AOS when the component mounts
     AOS.init({
-      duration: 1000, // Animation duration
-      easing: "ease-out-cubic", // Easing type
-      once: true, // Ensure the animation only triggers once
-      mirror: true, // Animate elements both scrolling down AND up
+      duration: 1000,
+      easing: "ease-out-cubic",
+      once: false, // animate every scroll
+      mirror: true,
     });
   }, []);
 
   return (
-    <section className="relative py-20 bg-[#f1f7ff]">
+    <section className="relative py-20 bg-white dark:bg-black transition-colors">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1
-            className="text-4xl md:text-6xl font-bold mb-6 font-sans"
-            style={{ color: FG }}
+            className="text-4xl md:text-6xl font-bold mb-6 font-sans text-gray-900 dark:text-white"
             data-aos="fade-up"
           >
             Your Trusted Partner in
@@ -36,12 +34,14 @@ export default function HeroSection() {
           </h1>
 
           <p
-            className="text-xl mb-8 max-w-2xl mx-auto font-serif leading-relaxed"
-            style={{ color: MUTED }}
+            className="text-xl mb-8 max-w-2xl mx-auto font-serif leading-relaxed text-gray-600 dark:text-gray-300"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            From the moment of the accident to getting you back on the road, we handle everything — professional repairs, courtesy cars, and complete insurance claim support. It’s your right by law to choose your own repairer, so choose wisely — and let us take care of the rest.
+            From the moment of the accident to getting you back on the road, we
+            handle everything — professional repairs, courtesy cars, and complete
+            insurance claim support. It’s your right by law to choose your own
+            repairer, so choose wisely — and let us take care of the rest.
           </p>
 
           <div
@@ -65,11 +65,9 @@ export default function HeroSection() {
 
             <a
               href={TEL_LINK}
-              className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium rounded-md h-10 px-6 font-serif border shadow-xs transition-colors"
+              className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium rounded-md h-10 px-6 font-serif border shadow-xs transition-colors text-gray-900 dark:text-white border-gray-300 dark:border-gray-600"
               style={{
                 backgroundColor: "transparent",
-                borderColor: "#e5e7eb",
-                color: FG,
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = PRIMARY;
@@ -78,8 +76,8 @@ export default function HeroSection() {
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = "transparent";
-                e.currentTarget.style.color = FG;
-                e.currentTarget.style.borderColor = "#e5e7eb";
+                e.currentTarget.style.color = "";
+                e.currentTarget.style.borderColor = "";
               }}
             >
               Call Now: {PHONE}
@@ -95,7 +93,7 @@ export default function HeroSection() {
             >
               <div
                 className="p-4 rounded-full mb-4"
-                style={{ backgroundColor: "rgba(11,107,58,0.10)" }}
+                style={{ backgroundColor: "rgba(0,150,230,0.15)" }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -112,13 +110,10 @@ export default function HeroSection() {
                   <circle cx="12" cy="10" r="3" />
                 </svg>
               </div>
-              <h3 className="font-semibold mb-2 font-sans" style={{ color: FG }}>
+              <h3 className="font-semibold mb-2 font-sans text-gray-900 dark:text-white">
                 Insurance Approved
               </h3>
-              <p
-                className="text-sm font-serif text-center"
-                style={{ color: MUTED }}
-              >
+              <p className="text-sm font-serif text-center text-gray-600 dark:text-gray-300">
                 Trusted by major insurance companies nationwide
               </p>
             </div>
@@ -131,7 +126,7 @@ export default function HeroSection() {
             >
               <div
                 className="p-4 rounded-full mb-4"
-                style={{ backgroundColor: "rgba(11,107,58,0.10)" }}
+                style={{ backgroundColor: "rgba(0,150,230,0.15)" }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -150,13 +145,10 @@ export default function HeroSection() {
                   <circle cx="17" cy="17" r="2" />
                 </svg>
               </div>
-              <h3 className="font-semibold mb-2 font-sans" style={{ color: FG }}>
+              <h3 className="font-semibold mb-2 font-sans text-gray-900 dark:text-white">
                 Courtesy Cars
               </h3>
-              <p
-                className="text-sm font-serif text-center"
-                style={{ color: MUTED }}
-              >
+              <p className="text-sm font-serif text-center text-gray-600 dark:text-gray-300">
                 Keep you mobile while we repair your vehicle
               </p>
             </div>
@@ -169,7 +161,7 @@ export default function HeroSection() {
             >
               <div
                 className="p-4 rounded-full mb-4"
-                style={{ backgroundColor: "rgba(11,107,58,0.10)" }}
+                style={{ backgroundColor: "rgba(0,150,230,0.15)" }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -188,13 +180,10 @@ export default function HeroSection() {
                   <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                 </svg>
               </div>
-              <h3 className="font-semibold mb-2 font-sans" style={{ color: FG }}>
+              <h3 className="font-semibold mb-2 font-sans text-gray-900 dark:text-white">
                 Full Support
               </h3>
-              <p
-                className="text-sm font-serif text-center"
-                style={{ color: MUTED }}
-              >
+              <p className="text-sm font-serif text-center text-gray-600 dark:text-gray-300">
                 We handle your claim from start to finish
               </p>
             </div>

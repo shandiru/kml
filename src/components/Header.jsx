@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FiMapPin, FiClock, FiCalendar, FiX } from "react-icons/fi";
-import QuoteModal from "../components/QuoteModal"
+import QuoteModal from "../components/QuoteModal";
+import ThemeToggle from "../components/ThemeToggle"; // ✅ Theme Toggle import
 
-const GREEN = "#066a3c";
-const GREEN_HOVER = "#055a33";
-const BRAND_GREEN = "#0b6b3a";
+// 🎨 Brand Colors
+const BRAND_BLUE = "#0096E6";
+const BRAND_BLUE_HOVER = "#007BC2";
+const BRAND_BLACK = "#000000";
+const BRAND_WHITE = "#FFFFFF";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -30,8 +32,8 @@ export default function Header() {
   }, []);
 
   const navStyle = ({ isActive }) => ({
-    color: isActive ? GREEN : "#1f2937",
-    borderBottom: isActive ? `2px solid ${GREEN}` : "none",
+    color: isActive ? BRAND_BLUE : BRAND_BLACK,
+    borderBottom: isActive ? `2px solid ${BRAND_BLUE}` : "none",
     paddingBottom: isActive ? 2 : 0,
   });
 
@@ -46,8 +48,8 @@ export default function Header() {
   return (
     <>
       <header
-        className="border-b"
-        style={{ borderColor: "rgba(0,0,0,0.08)", backgroundColor: "#fff" }}
+        className="border-b bg-white dark:bg-black dark:text-white"
+        style={{ borderColor: "rgba(0,0,0,0.08)" }}
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -55,13 +57,12 @@ export default function Header() {
             <Link to="/" className="flex items-baseline">
               <h1
                 className="text-2xl font-bold font-sans"
-                style={{ color: BRAND_GREEN }}
+                style={{ color: BRAND_BLUE }}
               >
                 KMLservices
               </h1>
               <span
-                className="ml-2 text-sm font-serif"
-                style={{ color: "rgba(0,0,0,0.6)" }}
+                className="ml-2 text-sm font-serif text-gray-600 dark:text-gray-300"
               >
                 Insurance Repairs
               </span>
@@ -73,8 +74,7 @@ export default function Header() {
               <div className="relative" ref={servicesRef}>
                 <button
                   onClick={() => setServicesOpen((prev) => !prev)}
-                  className="flex items-center gap-1 font-serif transition-colors"
-                  style={{ color: "#1f2937" }}
+                  className="flex items-center gap-1 font-serif transition-colors text-gray-800 dark:text-gray-200"
                 >
                   Services
                   <svg
@@ -89,22 +89,13 @@ export default function Header() {
                   </svg>
                 </button>
                 {servicesOpen && (
-                  <div className="absolute top-full left-0 bg-white shadow-md rounded-md mt-2 py-2 z-50 w-48">
+                  <div className="absolute top-full left-0 bg-white dark:bg-gray-900 shadow-md rounded-md mt-2 py-2 z-50 w-48">
                     {serviceLinks.map((s) => (
                       <NavLink
                         key={s.label}
                         to={s.to}
-                        className="block px-4 py-2 text-sm transition-colors"
-                        style={{ color: "#1f2937" }}
+                        className="block px-4 py-2 text-sm transition-colors text-gray-800 dark:text-gray-200"
                         onClick={() => setServicesOpen(false)}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = GREEN;
-                          e.currentTarget.style.color = "#fff";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = "transparent";
-                          e.currentTarget.style.color = "#1f2937";
-                        }}
                       >
                         {s.label}
                       </NavLink>
@@ -115,42 +106,45 @@ export default function Header() {
 
               <NavLink
                 to="/about"
-                className="font-serif transition-colors"
-                style={navStyle}
+               className="font-serif transition-colors text-gray-800 dark:text-gray-200"
+                
               >
                 About
               </NavLink>
 
               <a
                 href="/#process"
-                className="font-serif transition-colors"
-                style={{ color: "#1f2937" }}
+                className="font-serif transition-colors text-gray-800 dark:text-gray-200"
               >
                 Our Process
               </a>
               <a
                 href="/#contact"
-                className="font-serif transition-colors"
-                style={{ color: "#1f2937" }}
+                className="font-serif transition-colors text-gray-800 dark:text-gray-200"
               >
                 Contact
               </a>
             </nav>
 
-            {/* CTA */}
-            <button
-              className="hidden md:inline-flex items-center justify-center rounded-md text-sm font-medium h-9 px-4 py-2 shadow-xs font-serif"
-              style={{ backgroundColor: GREEN, color: "#ffffff" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor = GREEN_HOVER)
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.backgroundColor = GREEN)
-              }
-              onClick={() => setShowQuoteModal(true)}
-            >
-              Get Quote
-            </button>
+            {/* CTA & Theme Toggle */}
+            <div className="flex items-center space-x-4">
+              <button
+                className="hidden md:inline-flex items-center justify-center rounded-md text-sm font-medium h-9 px-4 py-2 shadow-xs font-serif"
+                style={{ backgroundColor: BRAND_BLUE, color: BRAND_WHITE }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = BRAND_BLUE_HOVER)
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = BRAND_BLUE)
+                }
+                onClick={() => setShowQuoteModal(true)}
+              >
+                Get Quote
+              </button>
+
+              {/* ✅ Theme Toggle Button */}
+              <ThemeToggle />
+            </div>
 
             {/* Mobile burger */}
             <button
@@ -187,7 +181,7 @@ export default function Header() {
           {/* Mobile drawer */}
           {open && (
             <div
-              className="md:hidden border-t mt-3"
+              className="md:hidden border-t mt-3 bg-white dark:bg-black dark:text-white"
               style={{ borderColor: "rgba(0,0,0,0.08)" }}
             >
               <nav className="py-3 flex flex-col">
@@ -200,17 +194,8 @@ export default function Header() {
                       <NavLink
                         key={s.label}
                         to={s.to}
-                        className="block py-1 text-sm transition-colors px-2 rounded"
-                        style={{ color: "#1f2937" }}
+                        className="block py-1 text-sm transition-colors px-2 rounded text-gray-800 dark:text-gray-200"
                         onClick={() => setOpen(false)}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = GREEN;
-                          e.currentTarget.style.color = "#fff";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = "transparent";
-                          e.currentTarget.style.color = "#1f2937";
-                        }}
                       >
                         {s.label}
                       </NavLink>
@@ -220,36 +205,32 @@ export default function Header() {
 
                 <NavLink
                   to="/about"
-                  className="px-2 py-2 font-serif"
-                  style={({ isActive }) => ({
-                    color: isActive ? GREEN : "#1f2937",
-                  })}
+                   className="px-2 py-2 font-serif text-gray-800 dark:text-gray-200"
+                  
                   onClick={() => setOpen(false)}
                 >
                   About
                 </NavLink>
                 <a
                   href="/#process"
-                  className="px-2 py-2 font-serif"
-                  style={{ color: "#1f2937" }}
+                  className="px-2 py-2 font-serif text-gray-800 dark:text-gray-200"
                   onClick={() => setOpen(false)}
                 >
                   Our Process
                 </a>
                 <a
                   href="/#contact"
-                  className="px-2 py-2 font-serif"
-                  style={{ color: "#1f2937" }}
+                  className="px-2 py-2 font-serif text-gray-800 dark:text-gray-200"
                   onClick={() => setOpen(false)}
                 >
                   Contact
                 </a>
               </nav>
 
-              <div className="pb-4 px-2">
+              <div className="pb-4 px-2 flex items-center justify-between">
                 <button
-                  className="inline-flex w-full items-center justify-center rounded-md text-sm font-medium h-10 px-4 py-2 font-serif"
-                  style={{ backgroundColor: GREEN, color: "#ffffff" }}
+                  className="inline-flex items-center justify-center rounded-md text-sm font-medium h-10 px-4 py-2 font-serif"
+                  style={{ backgroundColor: BRAND_BLUE, color: BRAND_WHITE }}
                   onClick={() => {
                     setOpen(false);
                     setShowQuoteModal(true);
@@ -257,6 +238,9 @@ export default function Header() {
                 >
                   Get Quote
                 </button>
+
+                {/* ✅ Theme toggle in mobile drawer */}
+                <ThemeToggle />
               </div>
             </div>
           )}
@@ -264,7 +248,7 @@ export default function Header() {
       </header>
 
       {/* ✅ Quote Modal */}
-     {showQuoteModal && <QuoteModal onClose={() => setShowQuoteModal(false)} />}
+      {showQuoteModal && <QuoteModal onClose={() => setShowQuoteModal(false)} />}
     </>
   );
 }

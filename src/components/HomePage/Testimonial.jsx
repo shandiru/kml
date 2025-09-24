@@ -1,13 +1,21 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { FiStar } from "react-icons/fi";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import AOS from "aos";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "aos/dist/aos.css";
+
+const BRAND = {
+  primary: "#0096E6", // blue
+  primaryHover: "#007BC2",
+  text: "#1f2937",
+};
 
 const testimonials = [
   {
@@ -53,42 +61,63 @@ function InitialAvatar({ name }) {
     .toUpperCase();
 
   return (
-    <div className="w-12 h-12 min-w-[3rem] rounded-full bg-[#d4ebe2] border border-[#066a3c66] flex items-center justify-center text-[#066a3c] font-semibold text-base">
+    <div
+      className="w-12 h-12 min-w-[3rem] rounded-full flex items-center justify-center font-semibold text-base"
+      style={{
+        backgroundColor: "rgba(0,150,230,0.12)",
+        border: `1px solid ${BRAND.primary}`,
+        color: BRAND.primary,
+      }}
+    >
       {initials}
     </div>
   );
 }
 
 export default function ReviewsSlider() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false, // repeat animations
+      mirror: true, // animate back on scroll up
+      offset: 100,
+    });
+  }, []);
+
   return (
     <section
-      className="w-full bg-white text-[#1f2937] py-16 px-4 relative"
+      className="w-full bg-white dark:bg-black text-[#1f2937] dark:text-white py-16 px-4 relative transition-colors"
       id="testimonial"
     >
       <style jsx>{`
         .swiper-pagination-bullet {
           background-color: transparent;
-          border: 2px solid #066a3c;
+          border: 2px solid ${BRAND.primary};
           width: 10px;
           height: 10px;
           opacity: 1;
           margin: 0 6px !important;
         }
         .swiper-pagination-bullet-active {
-          background-color: #066a3c;
+          background-color: ${BRAND.primary};
         }
       `}</style>
 
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-6xl font-bold mb-5 text-[#066a3c]">
+        {/* Heading */}
+        <div className="text-center mb-12" data-aos="fade-up">
+          <h2
+            className="text-4xl md:text-6xl font-bold mb-5 font-sans"
+            style={{ color: BRAND.primary }}
+          >
             What Our Customers Say
           </h2>
-          <p className="text-gray-600 text-sm md:text-lg font-semibold">
+          <p className="text-gray-600 dark:text-gray-300 text-sm md:text-lg font-semibold">
             Don’t just take our word for it – hear from our satisfied customers
           </p>
         </div>
 
+        {/* Slider */}
         <Swiper
           modules={[Navigation, Pagination]}
           navigation={{
@@ -108,41 +137,50 @@ export default function ReviewsSlider() {
           {testimonials.map((t, idx) => (
             <SwiperSlide key={idx} className="flex">
               <article
-                className="
-                  flex flex-col justify-between
-                  h-full w-full min-h-[320px] 
-                  rounded-2xl border border-[#dbe7f2] 
-                  bg-[#f1f7fb] p-6 shadow-md 
-                  transition hover:border-[#066a3cb3] group relative
-                "
+                className="flex flex-col justify-between h-full w-full min-h-[320px] rounded-2xl border p-6 shadow-md 
+                           transition-all hover:shadow-lg hover:-translate-y-1 active:scale-[0.98] cursor-pointer
+                           bg-[#f9fafb] dark:bg-gray-900 border-gray-200 dark:border-gray-700 group relative"
+                data-aos="zoom-in"
+                data-aos-delay={idx * 100}
               >
-                <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-[#066a3c]/5 via-transparent to-transparent" />
+                <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-[#0096E6]/5 via-transparent to-transparent" />
 
                 <div>
                   <div className="flex items-center gap-3">
                     <InitialAvatar name={t.name} />
                     <div className="flex-1">
-                      <div className="flex items-center gap-1 text-green-800">
+                      <div className="flex items-center gap-1 text-[#0096E6]">
                         {Array.from({ length: 5 }).map((_, i) => (
-                          <FiStar key={i} className="w-4 h-4 fill-green-800" />
+                          <FiStar key={i} className="w-4 h-4 fill-[#0096E6]" />
                         ))}
                       </div>
-                      <div className="mt-1 text-xs text-gray-500">
+                      <div className="mt-1 text-xs text-gray-500 dark:text-gray-400">
                         Verified review
                       </div>
                     </div>
                   </div>
 
-                  <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed">
+                  <p className="mt-4 text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                     “{t.text}”
                   </p>
                 </div>
 
                 <div className="mt-5 flex items-center justify-between">
-                  <div className="font-semibold text-[#066a3c]">{t.name}</div>
-                  <div className="flex items-center gap-1 px-2 py-1 rounded-full border border-[#066a3c66] text-[#066a3c]">
+                  <div
+                    className="font-semibold"
+                    style={{ color: BRAND.primary }}
+                  >
+                    {t.name}
+                  </div>
+                  <div
+                    className="flex items-center gap-1 px-2 py-1 rounded-full border text-sm"
+                    style={{
+                      borderColor: `${BRAND.primary}99`,
+                      color: BRAND.primary,
+                    }}
+                  >
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <FiStar key={i} className="w-3.5 h-3.5 fill-[#066a3c]" />
+                      <FiStar key={i} className="w-3.5 h-3.5 fill-[#0096E6]" />
                     ))}
                   </div>
                 </div>
@@ -151,21 +189,38 @@ export default function ReviewsSlider() {
           ))}
         </Swiper>
 
-        <div className="flex justify-center gap-6 mt-10">
-          <button className="swiper-button-prev-custom w-10 h-10 flex items-center justify-center rounded-full border border-[#066a3c] text-[#066a3c] hover:bg-[#066a3c] hover:text-white transition">
+        {/* Custom nav buttons */}
+        <div
+          className="flex justify-center gap-6 mt-10"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <button
+            className="swiper-button-prev-custom w-10 h-10 flex items-center justify-center rounded-full border transition
+                       border-[#0096E6] text-[#0096E6] hover:bg-[#0096E6] hover:text-white active:scale-95"
+          >
             <BsArrowLeft className="w-5 h-5" />
           </button>
-          <button className="swiper-button-next-custom w-10 h-10 flex items-center justify-center rounded-full border border-[#066a3c] text-[#066a3c] hover:bg-[#066a3c] hover:text-white transition">
+          <button
+            className="swiper-button-next-custom w-10 h-10 flex items-center justify-center rounded-full border transition
+                       border-[#0096E6] text-[#0096E6] hover:bg-[#0096E6] hover:text-white active:scale-95"
+          >
             <BsArrowRight className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="flex justify-center mt-8">
+        {/* CTA button */}
+        <div
+          className="flex justify-center mt-8"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           <a
             href="https://www.google.com/search?q=Kml+accident+repair+centre+ltd+-+Car+Body+Repair+Reviews"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 rounded-md text-white text-sm font-semibold bg-[#066a3c] hover:bg-[#055a33] transition"
+            className="inline-flex items-center px-6 py-3 rounded-md text-white text-sm font-semibold transition
+                       bg-[#0096E6] hover:bg-[#007BC2] active:scale-95"
           >
             Leave a Review on Google
           </a>
@@ -174,3 +229,4 @@ export default function ReviewsSlider() {
     </section>
   );
 }
+

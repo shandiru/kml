@@ -1,36 +1,33 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function ContactSection() {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: false, mirror: true, offset: 100 });
+  }, []);
+
   const COLORS = {
-    heading: "#1f2937",
-    body: "#4b5563",
-    primary: "#066a3c",
-    sectionBg: "#f7fbfc",
+    primary: "#0096E6",
+    primaryHover: "#007BC2",
     cardBg: "#ffffff",
     cardBorder: "#dbe7f2",
-    emergencyBtnBg: "#e6f4ea",
-    emergencyBtnText: "#0b6b3a",
   };
 
   return (
     <section
       id="contact"
-      className="py-20 px-4 sm:px-6 lg:px-8"
-      style={{ backgroundColor: "#f1f7ff" }}
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black transition-colors"
     >
       <div className="max-w-4xl mx-auto">
         {/* Heading */}
-        <div className="text-center mb-16">
-          <h2
-            className="text-3xl md:text-4xl font-bold mb-4 font-sans"
-            style={{ color: COLORS.heading }}
-          >
+        <div className="text-center mb-16" data-aos="fade-up">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-sans text-gray-900 dark:text-white">
             Get In Touch
           </h2>
-          <p
-            className="text-lg md:text-xl max-w-2xl mx-auto font-serif"
-            style={{ color: COLORS.body }}
-          >
+          <p className="text-lg md:text-xl max-w-2xl mx-auto font-serif text-gray-600 dark:text-gray-300">
             Ready to get your vehicle repaired? Contact us today for a free
             estimate or immediate accident support.
           </p>
@@ -38,28 +35,27 @@ export default function ContactSection() {
 
         {/* Contact Cards */}
         <div className="space-y-8">
+          {/* Emergency Contact */}
           <ContactCard
             title="Emergency Contact"
             COLORS={COLORS}
+            aos="fade-up"
             content={
               <>
                 <ContactRow
                   icon={<PhoneIcon />}
-                  label=" Accident Helpline"
+                  label="Accident Helpline"
                   detail={
                     <a
                       href="tel:01615333003"
-                      className="text-lg font-bold font-serif"
+                      className="text-lg font-bold font-serif transition hover:underline"
                       style={{ color: COLORS.primary }}
                     >
                       0161 533 3003
                     </a>
                   }
                 />
-                <p
-                  className="text-sm font-serif mt-2"
-                  style={{ color: COLORS.body }}
-                >
+                <p className="text-sm font-serif mt-2 text-gray-600 dark:text-gray-400">
                   Call immediately after an accident for instant support and
                   guidance.
                 </p>
@@ -67,9 +63,11 @@ export default function ContactSection() {
             }
           />
 
+          {/* Contact Details */}
           <ContactCard
             title="Contact Details"
             COLORS={COLORS}
+            aos="fade-up"
             content={
               <div className="space-y-4">
                 <ContactRow
@@ -78,7 +76,7 @@ export default function ContactSection() {
                   detail={
                     <a
                       href="mailto:kmlaccidentrepairecentreltd@gmail.com"
-                      className="font-serif"
+                      className="font-serif transition hover:underline"
                       style={{ color: COLORS.primary }}
                     >
                       kmlaccidentrepairecentreltd@gmail.com
@@ -91,7 +89,7 @@ export default function ContactSection() {
                   detail={
                     <a
                       href="https://www.google.com/maps?q=Haslam+Street,+Manchester,+M24+2,+United+Kingdom"
-                      className="font-serif underline"
+                      className="font-serif underline transition hover:text-[#007BC2]"
                       style={{ color: COLORS.primary }}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -104,7 +102,7 @@ export default function ContactSection() {
                   icon={<ClockIcon />}
                   label="Business Hours"
                   detail={
-                    <p className="font-serif" style={{ color: COLORS.body }}>
+                    <p className="font-serif text-gray-700 dark:text-gray-300">
                       Mon–Fri: 8AM–6PM
                       <br />
                       Sat: 9AM–4PM
@@ -115,15 +113,17 @@ export default function ContactSection() {
             }
           />
 
+          {/* Emergency Box */}
           <div
-            className="rounded-xl shadow-md overflow-hidden border"
+            className="rounded-xl shadow-md overflow-hidden border text-center transition hover:shadow-lg"
             style={{
               backgroundColor: COLORS.primary,
               borderColor: COLORS.primary,
               color: "#ffffff",
             }}
+            data-aos="zoom-in"
           >
-            <div className="p-8 text-center">
+            <div className="p-8">
               <h3 className="font-bold text-xl mb-3 font-sans">
                 Need Immediate Help?
               </h3>
@@ -133,11 +133,7 @@ export default function ContactSection() {
               </p>
               <a
                 href="tel:01615333003"
-                className="inline-block px-6 py-3 rounded-md text-sm font-medium font-serif shadow-md"
-                style={{
-                  backgroundColor: COLORS.emergencyBtnBg,
-                  color: COLORS.emergencyBtnText,
-                }}
+                className="inline-block px-6 py-3 rounded-md text-sm font-medium font-serif shadow-md bg-white text-[#0096E6] hover:bg-gray-100 transition"
               >
                 Call Emergency Line
               </a>
@@ -149,17 +145,15 @@ export default function ContactSection() {
   );
 }
 
-// ContactCard
-function ContactCard({ title, content, COLORS }) {
+/* Card wrapper */
+function ContactCard({ title, content, COLORS, aos }) {
   return (
     <div
-      className="rounded-xl border shadow-sm p-6"
-      style={{ backgroundColor: COLORS.cardBg, borderColor: COLORS.cardBorder }}
+      className="rounded-xl border shadow-sm p-6 bg-white dark:bg-gray-900 transition"
+      style={{ borderColor: COLORS.cardBorder }}
+      data-aos={aos}
     >
-      <h3
-        className="font-semibold font-sans text-lg mb-4"
-        style={{ color: COLORS.heading }}
-      >
+      <h3 className="font-semibold font-sans text-lg mb-4 text-gray-900 dark:text-white">
         {title}
       </h3>
       {content}
@@ -167,13 +161,13 @@ function ContactCard({ title, content, COLORS }) {
   );
 }
 
-// ContactRow
+/* Row layout */
 function ContactRow({ icon, label, detail }) {
   return (
     <div className="flex items-start gap-3">
       <div className="flex-shrink-0 mt-1">{icon}</div>
       <div>
-        <p className="font-semibold font-sans text-sm" style={{ color: "#1f2937" }}>
+        <p className="font-semibold font-sans text-sm text-gray-800 dark:text-gray-200">
           {label}
         </p>
         {detail}
@@ -182,14 +176,14 @@ function ContactRow({ icon, label, detail }) {
   );
 }
 
-// Icons
+/* Icons */
 function PhoneIcon() {
   return (
     <svg
       className="h-5 w-5"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      stroke="#066a3c"
+      stroke="#0096E6"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -205,7 +199,7 @@ function MailIcon() {
       className="h-5 w-5"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      stroke="#066a3c"
+      stroke="#0096E6"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -222,7 +216,7 @@ function LocationIcon() {
       className="h-5 w-5"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      stroke="#066a3c"
+      stroke="#0096E6"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -239,7 +233,7 @@ function ClockIcon() {
       className="h-5 w-5"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      stroke="#066a3c"
+      stroke="#0096E6"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"

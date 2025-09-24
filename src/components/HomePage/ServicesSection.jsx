@@ -1,17 +1,35 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function ServicesSection() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,   // animate every scroll
+      mirror: true,  // animate out on scroll up
+      offset: 100,
+    });
+
+    const refresh = () => AOS.refresh();
+    window.addEventListener("resize", refresh);
+    return () => window.removeEventListener("resize", refresh);
+  }, []);
+
   const COLORS = {
-    heading: "#1f2937",
-    body: "#4b5563",
-    primary: "#0b6b3a",
-    iconBg: "rgba(11,107,58,0.14)",
-    sectionBg: "#f7fbfc",
-    cardBg: "#eef5fb",
-    cardBorder: "#dbe7f2",
+    heading: "#1f2937", // slate-800
+    body: "#4b5563", // slate-600
+    primary: "#0096E6", // brand blue
+    iconBg: "rgba(0,150,230,0.12)", // translucent brand blue
+    sectionBg: "#ffffff", // white (light mode)
+    cardBg: "#f9fafb", // gray-50
+    cardBorder: "#e5e7eb", // gray-200
   };
 
-  const cards = [
+  
+ 
+const cards = [
     {
       title: "Insurance Repairs",
       desc: "Complete insurance claim repairs with direct billing to your insurer",
@@ -143,22 +161,15 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-20 px-4 md:px-8"      // ✅ Added full-page horizontal padding
-      style={{ backgroundColor: COLORS.sectionBg }}
+      className="py-20 px-4 md:px-8 bg-white dark:bg-black transition-colors"
     >
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <div className="text-center mb-16">
-          <h2
-            className="text-3xl md:text-4xl font-bold mb-4 font-sans"
-            style={{ color: COLORS.heading }}
-          >
+        <div className="text-center mb-16" data-aos="fade-up">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-sans text-gray-900 dark:text-white">
             Comprehensive Repair Services
           </h2>
-          <p
-            className="text-xl max-w-2xl mx-auto font-serif"
-            style={{ color: COLORS.body }}
-          >
+          <p className="text-xl max-w-2xl mx-auto font-serif text-gray-600 dark:text-gray-300">
             From minor scratches to major collision damage, we provide expert
             repair services for all your automotive needs.
           </p>
@@ -172,8 +183,11 @@ export default function ServicesSection() {
               <Wrapper
                 key={i}
                 href={c.href}
-                className="flex flex-col gap-6 rounded-xl py-6 shadow-sm hover:shadow-lg transition-shadow border"
-                style={{ backgroundColor: COLORS.cardBg, borderColor: COLORS.cardBorder }}
+                className="flex flex-col gap-6 rounded-xl py-6 shadow-sm border transition-all
+                           hover:shadow-lg hover:-translate-y-1 active:scale-[0.98]
+                           bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700"
+                data-aos="zoom-in"
+                data-aos-delay={i * 100}
               >
                 <div className="grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6">
                   <div
@@ -182,15 +196,12 @@ export default function ServicesSection() {
                   >
                     {c.icon}
                   </div>
-                  <div
-                    className="leading-none font-semibold font-sans"
-                    style={{ color: COLORS.heading }}
-                  >
+                  <div className="leading-none font-semibold font-sans text-gray-900 dark:text-white">
                     {c.title}
                   </div>
                 </div>
                 <div className="px-6">
-                  <div className="text-sm font-serif" style={{ color: COLORS.body }}>
+                  <div className="text-sm font-serif text-gray-600 dark:text-gray-300">
                     {c.desc}
                   </div>
                 </div>
@@ -202,3 +213,6 @@ export default function ServicesSection() {
     </section>
   );
 }
+
+
+
