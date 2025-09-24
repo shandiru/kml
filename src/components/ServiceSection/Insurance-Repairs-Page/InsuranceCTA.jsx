@@ -1,32 +1,41 @@
 import React from "react";
 import { Phone } from "lucide-react";
 
-const BRAND_GREEN = "#066a3c";
+const COLORS = {
+  primary: "#0096E6", // Brand blue
+  black: "#000000",
+  white: "#FFFFFF",
+};
 
 export default function InsuranceCTA() {
   // Function to handle phone call
   const handleCall = () => {
-    window.location.href = "tel:0161 533 3003"; // This will trigger the phone dialer
+    window.location.href = "tel:0161 533 3003";
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white dark:bg-black transition-colors">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6 font-sans text-gray-800">
+          {/* Heading */}
+          <h2 className="text-3xl font-bold mb-6 font-sans text-gray-900 dark:text-white">
             Need Insurance Repair Services?
           </h2>
-          <p className="text-xl text-gray-600 mb-8 font-serif">
+
+          {/* Subtitle */}
+          <p className="text-xl mb-8 font-serif text-gray-600 dark:text-gray-300">
             Contact us today for a free assessment and let us handle your
             insurance claim from start to finish.
           </p>
 
+          {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {/* Call Button */}
             <button
               onClick={handleCall}
-              className="inline-flex items-center justify-center gap-2 text-sm font-medium h-10 rounded-md px-6 font-serif text-white shadow hover:opacity-90 transition"
-              style={{ backgroundColor: BRAND_GREEN }}
+              className="inline-flex items-center justify-center gap-2 text-sm font-medium h-10 rounded-md px-6 font-serif text-white shadow-md 
+                         transition-all hover:shadow-lg hover:shadow-[#0096E6]/50 hover:-translate-y-0.5 active:scale-95"
+              style={{ backgroundColor: COLORS.primary }}
             >
               <Phone className="h-5 w-5" />
               Call 0161 533 3003
@@ -34,7 +43,10 @@ export default function InsuranceCTA() {
 
             {/* Request Callback Button */}
             <button
-              className="inline-flex items-center justify-center gap-2 text-sm font-medium h-10 rounded-md px-6 font-serif border border-gray-300 text-gray-800 hover:bg-gray-100 transition"
+              className="inline-flex items-center justify-center gap-2 text-sm font-medium h-10 rounded-md px-6 font-serif 
+                         border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-200 
+                         bg-white dark:bg-gray-900 
+                         transition-all hover:shadow-md hover:shadow-[#0096E6]/40 hover:-translate-y-0.5 active:scale-95"
             >
               Request Callback
             </button>
