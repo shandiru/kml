@@ -1,24 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 export default function HeroSection() {
-  const PRIMARY = "#0b6b3a";      // deep green
+  const PRIMARY = "#0b6b3a"; // deep green
   const PRIMARY_HOVER = "#085a31";
-  const FG = "#1f2937";           // heading text
-  const MUTED = "#4b5563";        // body text
+  const FG = "#1f2937"; // heading text
+  const MUTED = "#4b5563"; // body text
 
   const PHONE = "0161 533 3003";
   const TEL_LINK = "tel:0161 533 3003";
 
+  useEffect(() => {
+    // Initialize AOS when the component mounts
+    AOS.init({
+      duration: 1000, // Animation duration
+      easing: "ease-out-cubic", // Easing type
+      once: true, // Ensure the animation only triggers once
+      mirror: true, // Animate elements both scrolling down AND up
+    });
+  }, []);
+
   return (
-    <section
-      className="relative py-20 bg-[#f1f7ff]"
-      
-    >
+    <section className="relative py-20 bg-[#f1f7ff]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1
             className="text-4xl md:text-6xl font-bold mb-6 font-sans"
             style={{ color: FG }}
+            data-aos="fade-up"
           >
             Your Trusted Partner in
             <span className="block md:inline"> </span>
@@ -28,11 +38,17 @@ export default function HeroSection() {
           <p
             className="text-xl mb-8 max-w-2xl mx-auto font-serif leading-relaxed"
             style={{ color: MUTED }}
+            data-aos="fade-up"
+            data-aos-delay="200"
           >
-           From the moment of the accident to getting you back on the road, we handle everything — professional repairs, courtesy cars, and complete insurance claim support. It’s your right by law to choose your own repairer, so choose wisely — and let us take care of the rest.
+            From the moment of the accident to getting you back on the road, we handle everything — professional repairs, courtesy cars, and complete insurance claim support. It’s your right by law to choose your own repairer, so choose wisely — and let us take care of the rest.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             <a
               href="#contact"
               className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium rounded-md h-10 px-6 font-serif shadow-xs transition-colors"
@@ -72,7 +88,11 @@ export default function HeroSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             {/* Feature 1 */}
-            <div className="flex flex-col items-center">
+            <div
+              className="flex flex-col items-center"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
               <div
                 className="p-4 rounded-full mb-4"
                 style={{ backgroundColor: "rgba(11,107,58,0.10)" }}
@@ -89,18 +109,26 @@ export default function HeroSection() {
                   strokeLinejoin="round"
                 >
                   <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+                  <circle cx="12" cy="10" r="3" />
                 </svg>
               </div>
               <h3 className="font-semibold mb-2 font-sans" style={{ color: FG }}>
                 Insurance Approved
               </h3>
-              <p className="text-sm font-serif text-center" style={{ color: MUTED }}>
+              <p
+                className="text-sm font-serif text-center"
+                style={{ color: MUTED }}
+              >
                 Trusted by major insurance companies nationwide
               </p>
             </div>
 
             {/* Feature 2 */}
-            <div className="flex flex-col items-center">
+            <div
+              className="flex flex-col items-center"
+              data-aos="fade-up"
+              data-aos-delay="800"
+            >
               <div
                 className="p-4 rounded-full mb-4"
                 style={{ backgroundColor: "rgba(11,107,58,0.10)" }}
@@ -125,13 +153,20 @@ export default function HeroSection() {
               <h3 className="font-semibold mb-2 font-sans" style={{ color: FG }}>
                 Courtesy Cars
               </h3>
-              <p className="text-sm font-serif text-center" style={{ color: MUTED }}>
+              <p
+                className="text-sm font-serif text-center"
+                style={{ color: MUTED }}
+              >
                 Keep you mobile while we repair your vehicle
               </p>
             </div>
 
             {/* Feature 3 */}
-            <div className="flex flex-col items-center">
+            <div
+              className="flex flex-col items-center"
+              data-aos="fade-up"
+              data-aos-delay="1000"
+            >
               <div
                 className="p-4 rounded-full mb-4"
                 style={{ backgroundColor: "rgba(11,107,58,0.10)" }}
@@ -156,7 +191,10 @@ export default function HeroSection() {
               <h3 className="font-semibold mb-2 font-sans" style={{ color: FG }}>
                 Full Support
               </h3>
-              <p className="text-sm font-serif text-center" style={{ color: MUTED }}>
+              <p
+                className="text-sm font-serif text-center"
+                style={{ color: MUTED }}
+              >
                 We handle your claim from start to finish
               </p>
             </div>
