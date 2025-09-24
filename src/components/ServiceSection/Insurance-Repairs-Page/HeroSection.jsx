@@ -1,43 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import { Phone } from "lucide-react";
+import QuoteModal from "../Insurance-Repairs-Page/QuoteModal"
 
 export default function HeroSection() {
-    return (
-        <section className="bg-[#f1f7ff] py-16">
-            <div className="container mx-auto px-4">
-                <div className="max-w-4xl mx-auto text-center">
-                    {/* Title */}
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 font-sans">
-                        Insurance Repairs
-                    </h1>
+  const [isOpen, setIsOpen] = useState(false);
 
-                    {/* Subtitle */}
-                    <p className="text-xl text-gray-700 mb-8 font-serif">
-                        Expert insurance repair services with direct insurer relationships. 
-                        We handle everything from initial assessment to final delivery.
-                    </p>
+  return (
+    <section className="bg-[#f1f7ff] py-16">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Title */}
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 font-sans">
+            Insurance Repairs
+          </h1>
 
-                    {/* Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        {/* Call for Quote */}
-                        <a
-                            href="tel:0161 533 3003" // change this to your real phone number
-                            className="inline-flex items-center justify-center gap-2 bg-green-800 text-white hover:bg-green-900 h-10 rounded-md px-6 font-serif text-sm font-medium transition-all"
-                        >
-                            <Phone className="h-5 w-5" />
-                            Call for Quote
-                        </a>
+          {/* Subtitle */}
+          <p className="text-xl text-gray-700 mb-8 font-serif">
+            Expert insurance repair services with direct insurer relationships.
+            We handle everything from initial assessment to final delivery.
+          </p>
 
-                        {/* View Our Process */}
-                        <a
-                            href="#insurance-process"
-                            className="inline-flex items-center justify-center gap-2 border border-gray-300 text-gray-800 hover:bg-gray-100 h-10 rounded-md px-6 font-serif text-sm font-medium transition-all"
-                        >
-                            View Our Process
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* Call for Quote (now opens modal) */}
+            <button
+              onClick={() => setIsOpen(true)}
+              className="inline-flex items-center justify-center gap-2 bg-green-800 text-white hover:bg-green-900 h-10 rounded-md px-6 font-serif text-sm font-medium transition-all"
+            >
+              <Phone className="h-5 w-5" />
+              Call for Quote
+            </button>
+
+            {/* View Our Process */}
+            <a
+              href="#insurance-process"
+              className="inline-flex items-center justify-center gap-2 border border-gray-300 text-gray-800 hover:bg-gray-100 h-10 rounded-md px-6 font-serif text-sm font-medium transition-all"
+            >
+              View Our Process
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Quote Modal */}
+      <QuoteModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+    </section>
+  );
 }
