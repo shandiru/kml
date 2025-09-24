@@ -2,24 +2,25 @@ import React from "react";
 
 export default function AboutSection() {
   const COLORS = {
-    bg: "#e6f3f0", // background color from screenshot
-    heading: "#1f2937", // dark gray heading
-    text: "#374151" // muted foreground text
+    primary: "#0096E6", // KML Blue
+    dark: "#000000",    // Black
+    light: "#FFFFFF",   // White
+    muted: "#4b5563",   // Neutral slate-600 for body text
   };
 
   return (
-    <section style={{ backgroundColor: "#f1f7ff" }} className="py-16">
+    <section className="py-16 bg-white dark:bg-black transition-colors">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1
             className="text-4xl md:text-5xl font-bold mb-6 font-sans"
-            style={{ color: COLORS.heading }}
+            style={{ color: COLORS.primary }}
           >
             About KMLservices
           </h1>
           <p
             className="text-xl mb-8 font-serif"
-            style={{ color: COLORS.text }}
+            style={{ color: COLORS.muted }}
           >
             Your trusted partner for professional automotive repairs and
             insurance services across the UK.
