@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FiMapPin, FiClock, FiCalendar, FiX } from "react-icons/fi";
+import QuoteModal from "../components/QuoteModal"
 
 const GREEN = "#066a3c";
 const GREEN_HOVER = "#055a33";
@@ -263,46 +264,7 @@ export default function Header() {
       </header>
 
       {/* ✅ Quote Modal */}
-      {showQuoteModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="bg-white rounded-lg shadow-lg max-w-sm w-full p-6 relative">
-            {/* Close button */}
-            <button
-              className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
-              onClick={() => setShowQuoteModal(false)}
-            >
-              <FiX className="w-5 h-5" />
-            </button>
-
-            <div className="text-center mb-6">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <FiMapPin className="w-5 h-5 text-green-700" />
-                <h2 className="text-xl font-bold text-gray-800">
-                  In-person only
-                </h2>
-              </div>
-
-              <div className="space-y-2 text-gray-700 font-serif">
-                <p className="flex items-center justify-center gap-2">
-                  <FiClock className="w-4 h-4 text-green-700" />
-                  Monday–Friday, 7:00 AM – 4:30 PM
-                </p>
-                <p className="flex items-center justify-center gap-2">
-                  <FiCalendar className="w-4 h-4 text-green-700" />
-                  Saturday by prior arrangement
-                </p>
-              </div>
-            </div>
-
-            <a
-              href="tel:01615333003"
-              className="block text-center w-full bg-green-700 hover:bg-green-800 text-white font-medium py-2 px-4 rounded-md"
-            >
-              Call Now: 0161 533 3003
-            </a>
-          </div>
-        </div>
-      )}
+     {showQuoteModal && <QuoteModal onClose={() => setShowQuoteModal(false)} />}
     </>
   );
 }

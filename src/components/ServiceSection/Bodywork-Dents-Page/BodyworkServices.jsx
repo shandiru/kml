@@ -4,10 +4,12 @@ import {
     Paintbrush,
     Wrench,
     CircleCheckBig,
+    Leaf,
+    Droplet,
 } from "lucide-react";
 
 const BRAND_GREEN = "#066a3c";
-const CARD_BG = "#eef5ff"; // subtle cool light-blue like in the image
+const CARD_BG = "#eef5ff"; // subtle cool light-blue
 const BORDER = "rgba(0,0,0,.08)";
 
 export default function BodyworkServices() {
@@ -46,6 +48,30 @@ export default function BodyworkServices() {
                 "Wing and quarter panels",
                 "Bumper replacement",
                 "Bonnet and boot lids",
+            ],
+        },
+        {
+            title: "Eco Low Bake Oven",
+            icon: <Leaf className="h-12 w-12" />,
+            desc:
+                "Energy-efficient, noise-reduced, and eco-friendly — our low bake oven ensures top-quality results with care for the environment.",
+            bullets: [
+                "Eco-friendly system",
+                "Energy efficient",
+                "Noise reduction",
+                "Quality finish",
+            ],
+        },
+        {
+            title: "Precision Colour Matching",
+            icon: <Droplet className="h-12 w-12" />,
+            desc:
+                "Using the latest water-based technology and our in-house spectrometer system, we deliver perfect paint matches every time.",
+            bullets: [
+                "Water-based colour matching",
+                "In-house spectrometer accuracy",
+                "Eco-friendly paint products",
+                "Flawless factory-finish results",
             ],
         },
     ];
