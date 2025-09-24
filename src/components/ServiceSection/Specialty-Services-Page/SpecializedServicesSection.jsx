@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiPhone } from "react-icons/fi";
+import QuoteModal from "../Insurance-Repairs-Page/QuoteModal";
 
 export default function SpecializedServices() {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <section className="bg-[#f1f7ff] py-16">
             <div className="max-w-3xl mx-auto text-center px-4">
@@ -21,19 +24,25 @@ export default function SpecializedServices() {
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                     {/* Call Button */}
                     <a
-                        href="tel:0161 533 3003"
+                        href="tel:01615333003"
                         className="inline-flex items-center justify-center gap-2 bg-green-800 text-white font-medium px-6 py-3 rounded-md shadow hover:bg-green-700 transition"
                     >
                         <FiPhone className="text-lg" />
                         Call 0161 533 3003
                     </a>
 
-                    {/* Book Consultation Button */}
-                    <button className="px-6 py-3 rounded-md border border-gray-300 text-gray-800 font-medium bg-white hover:bg-gray-100 transition">
-                        Book Consultation
+                    {/* Get Quote Button */}
+                    <button
+                        onClick={() => setIsOpen(true)}
+                        className="px-6 py-3 rounded-md border border-gray-300 text-gray-800 font-medium bg-white hover:bg-gray-100 transition"
+                    >
+                        Get Quote
                     </button>
                 </div>
             </div>
+
+            {/* Quote Modal */}
+            <QuoteModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
         </section>
     );
 }

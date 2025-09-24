@@ -1,55 +1,48 @@
-// File: SpecialtyServices.jsx
-"use client";
-import React from "react";
+import React, { useState } from "react";
+import { FiPhone } from "react-icons/fi";
+import QuoteModal from "../Insurance-Repairs-Page/QuoteModal";
 
-export default function SpecialtyServices() {
+export default function SpecializedServices() {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <section className="bg-[#f1f7ff] py-16">
-            <div className="container mx-auto px-4">
-                <div className="max-w-4xl mx-auto text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-sans">
-                        Specialty Services
-                    </h1>
+            <div className="max-w-3xl mx-auto text-center px-4">
+                {/* Heading */}
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                    Need Specialized Automotive Services?
+                </h2>
 
-                    <p className="text-xl text-gray-700 mb-8 font-serif">
-                        Advanced automotive services including ADAS calibration, windscreen
-                        replacement, alloy wheel refurbishment, and vandalism repairs. Expert
-                        solutions for specialized vehicle needs.
-                    </p>
+                {/* Description */}
+                <p className="text-lg text-gray-700 mb-8">
+                    From ADAS calibration to alloy wheel refurbishment, our expert
+                    technicians provide specialized services with the precision your
+                    vehicle deserves.
+                </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button
-                            type="button"
-                            className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 bg-green-800 text-white shadow-xs hover:bg-green-700 h-10 rounded-md px-6 font-serif"
-                        >
-                            {/* Phone icon (inline SVG to avoid extra deps) */}
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                className="mr-2 h-5 w-5"
-                                aria-hidden="true"
-                            >
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                            </svg>
-                            Book Service
-                        </button>
+                {/* Buttons */}
+                <div className="flex flex-col sm:flex-row justify-center gap-4">
+                    {/* Call Button */}
+                    <a
+                        href="tel:01615333003"
+                        className="inline-flex items-center justify-center gap-2 bg-green-800 text-white font-medium px-6 py-3 rounded-md shadow hover:bg-green-700 transition"
+                    >
+                        <FiPhone className="text-lg" />
+                        Call 0161 533 3003
+                    </a>
 
-                        <button
-                            type="button"
-                            className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 border shadow-xs hover:bg-gray-100 hover:text-gray-900 h-10 rounded-md px-6 bg-transparent text-gray-700 font-serif"
-                        >
-                            Learn More
-                        </button>
-                    </div>
+                    {/* Get Quote Button */}
+                    <button
+                        onClick={() => setIsOpen(true)}
+                        className="px-6 py-3 rounded-md border border-gray-300 text-gray-800 font-medium bg-white hover:bg-gray-100 transition"
+                    >
+                        Get Quote
+                    </button>
                 </div>
             </div>
+
+            {/* Quote Modal */}
+            <QuoteModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
         </section>
     );
 }
