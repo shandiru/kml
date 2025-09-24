@@ -18,17 +18,11 @@ export default function ServicesSection() {
   }, []);
 
   const COLORS = {
-    heading: "#1f2937", // slate-800
-    body: "#4b5563", // slate-600
     primary: "#0096E6", // brand blue
     iconBg: "rgba(0,150,230,0.12)", // translucent brand blue
-    sectionBg: "#ffffff", // white (light mode)
-    cardBg: "#f9fafb", // gray-50
-    cardBorder: "#e5e7eb", // gray-200
   };
 
   
- 
 const cards = [
     {
       title: "Insurance Repairs",
@@ -183,15 +177,24 @@ const cards = [
               <Wrapper
                 key={i}
                 href={c.href}
-                className="flex flex-col gap-6 rounded-xl py-6 shadow-sm border transition-all
-                           hover:shadow-lg hover:-translate-y-1 active:scale-[0.98]
-                           bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700"
+                className="
+                  flex flex-col gap-6 rounded-xl py-6 px-6 shadow-sm border
+                  transition-all duration-300
+                  hover:shadow-[0_0_20px_rgba(0,150,230,0.6)]
+                  active:shadow-[0_0_25px_rgba(0,150,230,0.8)]
+                  hover:-translate-y-1 active:scale-[0.98]
+                  cursor-pointer
+                  bg-gray-50 dark:bg-gray-900
+                  border-gray-200 dark:border-gray-700
+                "
                 data-aos="zoom-in"
                 data-aos-delay={i * 100}
               >
-                <div className="grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6">
+                <div className="grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5">
                   <div
-                    className="p-3 rounded-full w-fit mb-4"
+                    className="p-3 rounded-full w-fit mb-4 transition-all duration-300
+                               group-hover:shadow-[0_0_12px_rgba(0,150,230,0.7)]
+                               active:shadow-[0_0_14px_rgba(0,150,230,0.9)]"
                     style={{ backgroundColor: COLORS.iconBg }}
                   >
                     {c.icon}
@@ -200,10 +203,10 @@ const cards = [
                     {c.title}
                   </div>
                 </div>
-                <div className="px-6">
-                  <div className="text-sm font-serif text-gray-600 dark:text-gray-300">
+                <div>
+                  <p className="text-sm font-serif text-gray-600 dark:text-gray-300">
                     {c.desc}
-                  </div>
+                  </p>
                 </div>
               </Wrapper>
             );
@@ -216,3 +219,5 @@ const cards = [
 
 
 
+
+ 
