@@ -1,18 +1,25 @@
+// File: ClaimsSupport.jsx
 import React, { useState } from "react";
 import QuoteModal from "../Insurance-Repairs-Page/QuoteModal";
+
+const COLORS = {
+  brand: "#0096E6", // Blue
+  white: "#FFFFFF",
+  black: "#000000",
+};
 
 export default function ClaimsSupport() {
   const [isOpen, setIsOpen] = useState(false); // ✅ Modal state
 
   return (
-    <section className="bg-[#f1f7ff] py-16">
+    <section className="py-16 bg-white dark:bg-black transition-colors">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-sans">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 font-sans">
             Claims Support
           </h1>
 
-          <p className="text-xl text-gray-700 mb-8 font-serif">
+          <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 font-serif">
             Complete end-to-end support for your insurance claim. From the
             moment of accident to getting your repaired vehicle back, we handle
             everything so you don't have to worry.
@@ -22,7 +29,8 @@ export default function ClaimsSupport() {
             {/* ✅ Start Claim - phone call */}
             <a
               href="tel:01615333003"
-              className="inline-flex items-center justify-center gap-2 bg-[#0a6a44] text-white shadow-xs hover:bg-[#095a3a] h-10 rounded-md px-6 font-medium font-serif"
+              className="inline-flex items-center justify-center gap-2 text-white shadow-md h-10 rounded-md px-6 font-medium font-serif transition-all hover:shadow-lg hover:scale-105"
+              style={{ backgroundColor: COLORS.brand }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +51,7 @@ export default function ClaimsSupport() {
             <button
               type="button"
               onClick={() => setIsOpen(true)}
-              className="inline-flex items-center justify-center gap-2 border border-gray-200 bg-white/60 backdrop-blur-[1px] text-gray-800 shadow-xs hover:bg-white h-10 rounded-md px-6 font-medium font-serif"
+              className="inline-flex items-center justify-center gap-2 border text-gray-800 dark:text-gray-200 bg-white dark:bg-transparent shadow-sm hover:bg-gray-100 dark:hover:bg-gray-800 h-10 rounded-md px-6 font-medium font-serif transition-all border-gray-300 dark:border-gray-600"
             >
               Get Quote
             </button>
