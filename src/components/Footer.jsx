@@ -1,16 +1,19 @@
+// src/components/Footer.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaInstagram } from "react-icons/fa"; // ✅ Added
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-100 py-12 px-4 sm:px-6 lg:px-8 xl:px-12">
+    <footer className="bg-black text-gray-100 dark:bg-gray-900 dark:text-gray-200 py-12 px-4 sm:px-6 lg:px-8 xl:px-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4 font-sans">KMLservices</h3>
-            <p className="text-sm mb-4 opacity-90 font-serif">
+            <h3 className="text-xl font-bold mb-4 font-sans text-white dark:text-white">
+              KMLservices
+            </h3>
+            <p className="text-sm mb-4 opacity-90 font-serif text-gray-300 dark:text-gray-400">
               Your trusted partner for professional insurance repairs, collision
               work, and complete automotive repair services.
             </p>
@@ -33,7 +36,7 @@ export default function Footer() {
                 </svg>
                 <a
                   href="tel:01615333003"
-                  className="font-serif hover:underline underline-offset-4"
+                  className="font-serif hover:text-blue-500 transition-colors"
                   aria-label="Call 0161 533 3003"
                 >
                   0161 533 3003
@@ -58,7 +61,7 @@ export default function Footer() {
                 </svg>
                 <a
                   href="mailto:kmlaccidentrepairecentreltd@gmail.com"
-                  className="font-serif hover:underline underline-offset-4 break-all"
+                  className="font-serif hover:text-blue-500 transition-colors break-all"
                   aria-label="Email kmlaccidentrepairecentreltd@gmail.com"
                 >
                   kmlaccidentrepairecentreltd@gmail.com
@@ -91,30 +94,32 @@ export default function Footer() {
 
           {/* Our Services */}
           <div>
-            <h4 className="font-semibold mb-4 font-sans">Our Services</h4>
+            <h4 className="font-semibold mb-4 font-sans text-white dark:text-white">
+              Our Services
+            </h4>
             <ul className="space-y-2 text-sm opacity-90">
               <li className="font-serif">
-                <Link to="/services/insurance-repairs" className="hover:underline underline-offset-4">
+                <Link to="/services/insurance-repairs" className="hover:text-blue-500">
                   Insurance Repairs
                 </Link>
               </li>
               <li className="font-serif">
-                <Link to="/services/collision-repairs" className="hover:underline underline-offset-4">
+                <Link to="/services/collision-repairs" className="hover:text-blue-500">
                   Collision Repairs
                 </Link>
               </li>
               <li className="font-serif">
-                <Link to="/services/bodywork-dents" className="hover:underline underline-offset-4">
+                <Link to="/services/bodywork-dents" className="hover:text-blue-500">
                   Bodywork &amp; Dents
                 </Link>
               </li>
               <li className="font-serif">
-                <Link to="/services/specialty-services" className="hover:underline underline-offset-4">
+                <Link to="/services/specialty-services" className="hover:text-blue-500">
                   End of Lease Repairs
                 </Link>
               </li>
               <li className="font-serif">
-                <Link to="/services/claims-support" className="hover:underline underline-offset-4">
+                <Link to="/services/claims-support" className="hover:text-blue-500">
                   Windscreen Replacement
                 </Link>
               </li>
@@ -123,30 +128,32 @@ export default function Footer() {
 
           {/* Support */}
           <div>
-            <h4 className="font-semibold mb-4 font-sans">Support</h4>
+            <h4 className="font-semibold mb-4 font-sans text-white dark:text-white">
+              Support
+            </h4>
             <ul className="space-y-2 text-sm opacity-90">
               <li className="font-serif">
-                <Link to="/support/accident-support" className="hover:underline underline-offset-4">
-                   Accident Support
+                <Link to="/support/accident-support" className="hover:text-blue-500">
+                  Accident Support
                 </Link>
               </li>
               <li className="font-serif">
-                <Link to="/services/claims-support" className="hover:underline underline-offset-4">
+                <Link to="/services/claims-support" className="hover:text-blue-500">
                   Insurance Claims
                 </Link>
               </li>
               <li className="font-serif">
-                <Link to="/support/courtesy-cars" className="hover:underline underline-offset-4">
+                <Link to="/support/courtesy-cars" className="hover:text-blue-500">
                   Courtesy Cars
                 </Link>
               </li>
               <li className="font-serif">
-                <Link to="/support/free-estimates" className="hover:underline underline-offset-4">
+                <Link to="/support/free-estimates" className="hover:text-blue-500">
                   Free Estimates
                 </Link>
               </li>
               <li className="font-serif">
-                <Link to="/support/adas-calibration" className="hover:underline underline-offset-4">
+                <Link to="/support/adas-calibration" className="hover:text-blue-500">
                   ADAS Calibration
                 </Link>
               </li>
@@ -155,26 +162,30 @@ export default function Footer() {
 
           {/* Emergency Contact */}
           <div>
-            <h4 className="font-semibold mb-4 font-sans">Emergency Contact</h4>
-            <div className="bg-green-900/40 p-4 rounded">
-              <p className="text-sm mb-2 font-serif">Accident Helpline:</p>
+            <h4 className="font-semibold mb-4 font-sans text-white dark:text-white">
+              Emergency Contact
+            </h4>
+            <div className="bg-blue-600/20 dark:bg-blue-500/20 p-4 rounded">
+              <p className="text-sm mb-2 font-serif text-gray-200 dark:text-gray-300">
+                Accident Helpline:
+              </p>
               <a
                 href="tel:01615333003"
-                className="text-lg font-bold font-sans hover:underline underline-offset-4"
+                className="text-lg font-bold font-sans text-white hover:text-blue-400"
                 aria-label="Call Accident Helpline 0161 533 3003"
               >
                 0161 533 3003
               </a>
-              <p className="text-xs mt-2 opacity-75 font-serif">
-                Available  for immediate assistance
+              <p className="text-xs mt-2 opacity-75 font-serif text-gray-300 dark:text-gray-400">
+                Available for immediate assistance
               </p>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-sm opacity-75 font-serif">
+        <div className="border-t border-gray-700 dark:border-gray-800 mt-8 pt-8 text-center">
+          <p className="text-sm opacity-75 font-serif text-gray-400 dark:text-gray-500">
             © 2024 KMLservices. All rights reserved. Professional automotive
             repair services nationwide.
           </p>
