@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link"; // ✅ import
 import QuoteModal from "../components/QuoteModal";
 import ThemeToggle from "../components/ThemeToggle"; // ✅ Theme Toggle import
 
@@ -31,12 +32,6 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const navStyle = ({ isActive }) => ({
-    color: isActive ? BRAND_BLUE : BRAND_BLACK,
-    borderBottom: isActive ? `2px solid ${BRAND_BLUE}` : "none",
-    paddingBottom: isActive ? 2 : 0,
-  });
-
   const serviceLinks = [
     { label: "Insurance Repairs", to: "/services/insurance-repairs" },
     { label: "Bodywork & Dents", to: "/services/bodywork-dents" },
@@ -61,9 +56,7 @@ export default function Header() {
               >
                 KMLservices
               </h1>
-              <span
-                className="ml-2 text-sm font-serif text-gray-600 dark:text-gray-300"
-              >
+              <span className="ml-2 text-sm font-serif text-gray-600 dark:text-gray-300">
                 Insurance Repairs
               </span>
             </Link>
@@ -106,24 +99,26 @@ export default function Header() {
 
               <NavLink
                 to="/about"
-               className="font-serif transition-colors text-gray-800 dark:text-gray-200"
-                
+                className="font-serif transition-colors text-gray-800 dark:text-gray-200"
               >
                 About
               </NavLink>
 
-              <a
-                href="/#process"
+              {/* ✅ Changed to HashLink */}
+              <HashLink
+                smooth
+                to="/#process"
                 className="font-serif transition-colors text-gray-800 dark:text-gray-200"
               >
                 Our Process
-              </a>
-              <a
-                href="/#contact"
+              </HashLink>
+              <HashLink
+                smooth
+                to="/#contact"
                 className="font-serif transition-colors text-gray-800 dark:text-gray-200"
               >
                 Contact
-              </a>
+              </HashLink>
             </nav>
 
             {/* CTA & Theme Toggle */}
@@ -142,7 +137,6 @@ export default function Header() {
                 Get Quote
               </button>
 
-              {/* ✅ Theme Toggle Button */}
               <ThemeToggle />
             </div>
 
@@ -205,26 +199,29 @@ export default function Header() {
 
                 <NavLink
                   to="/about"
-                   className="px-2 py-2 font-serif text-gray-800 dark:text-gray-200"
-                  
+                  className="px-2 py-2 font-serif text-gray-800 dark:text-gray-200"
                   onClick={() => setOpen(false)}
                 >
                   About
                 </NavLink>
-                <a
-                  href="/#process"
+
+                {/* ✅ Changed to HashLink */}
+                <HashLink
+                  smooth
+                  to="/#process"
                   className="px-2 py-2 font-serif text-gray-800 dark:text-gray-200"
                   onClick={() => setOpen(false)}
                 >
                   Our Process
-                </a>
-                <a
-                  href="/#contact"
+                </HashLink>
+                <HashLink
+                  smooth
+                  to="/#contact"
                   className="px-2 py-2 font-serif text-gray-800 dark:text-gray-200"
                   onClick={() => setOpen(false)}
                 >
                   Contact
-                </a>
+                </HashLink>
               </nav>
 
               <div className="pb-4 px-2 flex items-center justify-between">
@@ -238,8 +235,6 @@ export default function Header() {
                 >
                   Get Quote
                 </button>
-
-                {/* ✅ Theme toggle in mobile drawer */}
                 <ThemeToggle />
               </div>
             </div>
@@ -247,7 +242,6 @@ export default function Header() {
         </div>
       </header>
 
-      {/* ✅ Quote Modal */}
       {showQuoteModal && <QuoteModal onClose={() => setShowQuoteModal(false)} />}
     </>
   );
