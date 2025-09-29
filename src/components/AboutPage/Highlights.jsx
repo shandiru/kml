@@ -3,9 +3,6 @@ import React from "react";
 export default function AboutHighlights() {
   const COLORS = {
     primary: "#0096E6", // KML Blue
-    dark: "#000000",    // Black
-    light: "#FFFFFF",   // White
-    muted: "#6b7280",   // Slate gray for text
   };
 
   const features = [
@@ -101,10 +98,7 @@ export default function AboutHighlights() {
       <div className="container mx-auto px-4">
         {/* Intro text */}
         <div className="max-w-4xl mx-auto text-center mb-12">
-          <p
-            className="text-lg leading-relaxed font-serif"
-            style={{ color: COLORS.muted }}
-          >
+          <p className="text-lg leading-relaxed font-serif text-gray-700 dark:text-gray-300">
             KMLservices has been providing exceptional automotive repair
             services for over a decade, specializing in insurance repairs,
             collision work, and comprehensive vehicle restoration. Our
@@ -130,16 +124,10 @@ export default function AboutHighlights() {
               "
             >
               <div>{f.icon}</div>
-              <div
-                className="font-semibold font-sans text-lg"
-                style={{ color: COLORS.dark }}
-              >
+              <div className="font-semibold font-sans text-lg text-black dark:text-white">
                 {f.title}
               </div>
-              <p
-                className="text-sm font-serif"
-                style={{ color: COLORS.muted }}
-              >
+              <p className="text-sm font-serif text-gray-600 dark:text-gray-300">
                 {f.desc}
               </p>
             </div>
