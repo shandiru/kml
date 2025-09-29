@@ -7,8 +7,8 @@ export default function ServicesSection() {
   useEffect(() => {
     AOS.init({
       duration: 800,
-      once: false,   // animate every scroll
-      mirror: true,  // animate out on scroll up
+      once: false,
+      mirror: true,
       offset: 100,
     });
 
@@ -152,6 +152,7 @@ const cards = [
     },
   ];
 
+
   return (
     <section
       id="services"
@@ -171,51 +172,59 @@ const cards = [
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cards.map((c, i) => {
-            const Wrapper = c.href ? "a" : "div";
-            return (
-              <Wrapper
-                key={i}
-                href={c.href}
-                className="
-                  flex flex-col gap-6 rounded-xl py-6 px-6 shadow-sm border
-                  transition-all duration-300
-                  hover:shadow-[0_0_20px_rgba(0,150,230,0.6)]
-                  active:shadow-[0_0_25px_rgba(0,150,230,0.8)]
-                  hover:-translate-y-1 active:scale-[0.98]
-                  cursor-pointer
-                  bg-gray-50 dark:bg-gray-900
-                  border-gray-200 dark:border-gray-700
-                "
-                data-aos="zoom-in"
-                data-aos-delay={i * 100}
-              >
-                <div className="grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5">
-                  <div
-                    className="p-3 rounded-full w-fit mb-4 transition-all duration-300
-                               group-hover:shadow-[0_0_12px_rgba(0,150,230,0.7)]
-                               active:shadow-[0_0_14px_rgba(0,150,230,0.9)]"
-                    style={{ backgroundColor: COLORS.iconBg }}
-                  >
-                    {c.icon}
-                  </div>
-                  <div className="leading-none font-semibold font-sans text-gray-900 dark:text-white">
-                    {c.title}
-                  </div>
+          {cards.map((c, i) => (
+            <div
+              key={i}
+              className="flex flex-col justify-between rounded-xl py-8 px-6 shadow-md border
+                         transition-all duration-300 bg-gray-50 dark:bg-gray-900
+                         border-gray-200 dark:border-gray-700
+                         hover:shadow-[0_0_20px_rgba(0,150,230,0.6)]
+                         active:shadow-[0_0_25px_rgba(0,150,230,0.8)]
+                         hover:-translate-y-1 active:scale-[0.98]"
+              data-aos="zoom-in"
+              data-aos-delay={i * 100}
+            >
+              {/* Icon Centered */}
+              <div className="flex justify-center mb-4">
+                <div
+                  className="p-4 rounded-full transition-all duration-300"
+                  style={{ backgroundColor: COLORS.iconBg }}
+                >
+                  {c.icon}
                 </div>
-                <div>
-                  <p className="text-sm font-serif text-gray-600 dark:text-gray-300">
-                    {c.desc}
-                  </p>
-                </div>
-              </Wrapper>
-            );
-          })}
+              </div>
+
+              {/* Title & Description */}
+              <div className="text-center flex-1">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                  {c.title}
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                  {c.desc}
+                </p>
+              </div>
+
+              {/* Read More Button inside box */}
+              <div className="mt-6 flex justify-center">
+                <a
+                  href={c.href || "#"}
+                  className="inline-block px-5 py-2 text-sm font-medium rounded-full 
+                             bg-[#0096E6] text-white shadow-md
+                             hover:bg-[#007bbf] transition-colors"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
+
+
+
 
 
 

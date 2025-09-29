@@ -63,6 +63,14 @@ export default function Header() {
 
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center space-x-8">
+              {/* ✅ Home Link */}
+              <NavLink
+                to="/"
+                className="font-serif transition-colors text-gray-800 dark:text-gray-200"
+              >
+                Home
+              </NavLink>
+
               {/* Services dropdown */}
               <div className="relative" ref={servicesRef}>
                 <button
@@ -104,7 +112,6 @@ export default function Header() {
                 About
               </NavLink>
 
-              {/* ✅ Changed to HashLink */}
               <HashLink
                 smooth
                 to="/#process"
@@ -179,6 +186,15 @@ export default function Header() {
               style={{ borderColor: "rgba(0,0,0,0.08)" }}
             >
               <nav className="py-3 flex flex-col">
+                {/* ✅ Home Link */}
+                <NavLink
+                  to="/"
+                  className="px-2 py-2 font-serif text-gray-800 dark:text-gray-200"
+                  onClick={() => setOpen(false)}
+                >
+                  Home
+                </NavLink>
+
                 <details className="px-2 py-2">
                   <summary className="cursor-pointer font-serif">
                     Services
@@ -205,7 +221,6 @@ export default function Header() {
                   About
                 </NavLink>
 
-                {/* ✅ Changed to HashLink */}
                 <HashLink
                   smooth
                   to="/#process"

@@ -184,10 +184,21 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-700 dark:border-gray-800 mt-8 pt-8 text-center">
+        <div className="border-t border-gray-700 dark:border-gray-800 mt-8 pt-8 text-center space-y-2">
           <p className="text-sm opacity-75 font-serif text-gray-400 dark:text-gray-500">
             © 2024 KMLservices. All rights reserved. Professional automotive
             repair services nationwide.
+          </p>
+          <p className="text-sm opacity-75 font-serif text-gray-400 dark:text-gray-500">
+            Powered by{" "}
+            <a
+              href="https://www.ansely.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 underline underline-offset-4"
+            >
+              Ansely
+            </a>
           </p>
         </div>
       </div>

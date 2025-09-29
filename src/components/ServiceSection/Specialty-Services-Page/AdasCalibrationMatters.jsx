@@ -72,7 +72,7 @@ export default function AdasCalibrationMatters() {
   ];
 
   return (
-    <section className="py-16 bg-white dark:bg-black transition-colors">
+    <section className="py-16 bg-gray-50 dark:bg-black transition-colors">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Heading */}
@@ -85,23 +85,27 @@ export default function AdasCalibrationMatters() {
             systems must be recalibrated to function correctly.
           </p>
 
-          {/* 3 Columns */}
+          {/* 3 Cards */}
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((f) => (
               <div
                 key={f.title}
-                className="text-center p-6 rounded-lg transition-all hover:shadow-lg hover:shadow-[#0096E6]/40 hover:-translate-y-0.5 active:scale-95"
+                className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 
+                           rounded-xl p-8 text-center 
+                           shadow-lg transition-all duration-300 transform 
+                           hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-2"
               >
+                {/* Icon */}
                 <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 transition-all hover:shadow-md hover:shadow-[#0096E6]/50"
-                  style={{ backgroundColor: COLORS.white, color: COLORS.brand }}
+                  className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 
+                             bg-blue-50 dark:bg-gray-800 shadow-inner"
                 >
                   {f.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-2 font-sans text-gray-900 dark:text-white">
+                <h3 className="text-xl font-semibold mb-3 font-sans text-gray-900 dark:text-white">
                   {f.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300 font-serif">
+                <p className="text-gray-600 dark:text-gray-300 font-serif leading-relaxed">
                   {f.text}
                 </p>
               </div>
