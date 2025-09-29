@@ -9,7 +9,7 @@ const COLORS = {
 };
 
 export default function SpecialtyServicesGrid() {
-  const services = [
+ const services = [
     {
       icon: (
         <svg
@@ -124,7 +124,36 @@ export default function SpecialtyServicesGrid() {
         "Insurance claim assistance",
       ],
     },
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="h-12 w-12 mb-4"
+          style={{ color: COLORS.brand }}
+        >
+          <path d="M5 3a2 2 0 0 0-2 2v16l5-3 5 3 5-3 5 3V5a2 2 0 0 0-2-2z" />
+        </svg>
+      ),
+      title: "End of Lease Repairs",
+      subtitle:
+        "Professional end of lease vehicle repair service with fast turnaround and fair pricing",
+      desc: "Restore your vehicle to showroom condition and avoid costly end-of-lease charges. Expert repairs carried out using manufacturer-approved methods.",
+      bullets: [
+        "Same-day repair service",
+        "Mobile collection & delivery available",
+        "Transparent pricing with no hidden costs",
+        "Manufacturer-approved parts & methods",
+        "Full inspection report included",
+      ],
+    },
   ];
+
 
   return (
     <section className="py-16 bg-white dark:bg-black transition-colors">

@@ -6,6 +6,7 @@ import ServicesSection from "../components/HomePage/ServicesSection.jsx";
 import ProcessSection from "../components/HomePage/ProcessSection.jsx";
 import ContactSection from "../components/HomePage/ContactSection.jsx";
 import ReviewsSlider from "../components/HomePage/Testimonial.jsx";
+import Findus from "../components/HomePage/Findus.jsx"
 export default function Home() {
   return (
     <div>
@@ -25,6 +26,9 @@ export default function Home() {
       </section>
       <section>
         <ReviewsSlider />
+      </section>
+      <section>
+        <Findus />
       </section>
 
       {/* Contact */}

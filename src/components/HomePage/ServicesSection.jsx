@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { href } from "react-router-dom";
 
 export default function ServicesSection() {
   useEffect(() => {
@@ -86,6 +87,8 @@ const cards = [
     {
       title: "No Fault Claims",
       desc: "Complete support from accident to repair - we handle everything",
+    href: "services/claims-support",
+      
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
           fill="none" stroke={COLORS.primary} strokeWidth="2"
@@ -98,6 +101,7 @@ const cards = [
     {
       title: "ADAS Calibrations",
       desc: "Advanced driver assistance system calibration after repairs",
+      href:"services/specialty-services",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
           fill="none" stroke={COLORS.primary} strokeWidth="2"
@@ -111,7 +115,7 @@ const cards = [
     {
       title: "Windscreen Replacement",
       desc: "Professional windscreen replacement with ADAS recalibration",
-      href: "/services/claims-support",
+      href: "/services/specialty-services",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
           fill="none" stroke={COLORS.primary} strokeWidth="2"
@@ -125,6 +129,7 @@ const cards = [
     },
     {
       title: "Alloy Wheel Refurb",
+      href:"/services/specialty-services",
       desc: "Complete alloy wheel refurbishment and repair services",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -139,6 +144,7 @@ const cards = [
     {
       title: "Vandalism Repairs",
       desc: "Quick and professional vandalism damage repair services",
+      href :"/services/specialty-services",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
           fill="none" stroke={COLORS.primary} strokeWidth="2"
