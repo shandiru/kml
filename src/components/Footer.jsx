@@ -5,7 +5,7 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-gray-100 dark:bg-gray-900 dark:text-gray-200 py-12 px-4 sm:px-6 lg:px-8 xl:px-12">
+    <footer className="bg-black text-gray-100 dark:bg-gray-900 dark:text-gray-200 py-7 px-4 sm:px-6 lg:px-8 xl:px-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -184,23 +184,34 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-700 dark:border-gray-800 mt-8 pt-8 text-center space-y-2">
-          <p className="text-sm opacity-75 font-serif text-gray-400 dark:text-gray-500">
-            © 2024 KMLservices. All rights reserved. Professional automotive
-            repair services nationwide.
-          </p>
-          <p className="text-sm opacity-75 font-serif text-gray-400 dark:text-gray-500">
-            Powered by{" "}
-            <a
-              href="https://www.ansely.co.uk/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-400 underline underline-offset-4"
-            >
-              Ansely
-            </a>
-          </p>
+        <div className="border-t border-gray-700 dark:border-gray-800 mt-8 pt-6 text-center">
+          <div className="flex flex-col items-center gap-2">
+            <p className="text-sm opacity-75 font-serif text-gray-400 dark:text-gray-500">
+              © 2025 KMLservices. All rights reserved. Professional automotive
+              repair services nationwide.
+            </p>
+            <div className="flex gap-4 mt-2 text-sm font-serif text-gray-400 dark:text-gray-500">
+              <Link to="/terms-conditions" className="hover:text-blue-400 hover:underline underline-offset-4">
+                Terms &amp; Conditions
+              </Link>
+              <Link to="/privacy-policy" className="hover:text-blue-400 hover:underline underline-offset-4">
+                Privacy Policy
+              </Link>
+            </div>
+            <p className="text-sm opacity-75 font-serif text-gray-400 dark:text-gray-500">
+              Powered by{" "}
+              <a
+                href="https://www.ansely.co.uk/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-400 hover:underline underline-offset-4"
+              >
+                Ansely
+              </a>
+            </p>
+          </div>
         </div>
+
       </div>
     </footer>
   );
