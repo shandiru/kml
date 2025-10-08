@@ -54,10 +54,10 @@ export default function Header() {
                 className="text-2xl font-bold font-sans"
                 style={{ color: BRAND_BLUE }}
               >
-                KMLservices
+                KML Accident
               </h1>
               <span className="ml-2 text-sm font-serif text-gray-600 dark:text-gray-300">
-                Insurance Repairs
+               Repair Centre
               </span>
             </Link>
 
