@@ -1,13 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { HashLink } from "react-router-hash-link"; // ✅ import
+import { HashLink } from "react-router-hash-link";
 import QuoteModal from "../components/QuoteModal";
-import ThemeToggle from "../components/ThemeToggle"; // ✅ Theme Toggle import
+import ThemeToggle from "../components/ThemeToggle";
 
-// 🎨 Brand Colors
 const BRAND_BLUE = "#0096E6";
 const BRAND_BLUE_HOVER = "#007BC2";
-const BRAND_BLACK = "#000000";
 const BRAND_WHITE = "#FFFFFF";
 
 export default function Header() {
@@ -23,11 +21,11 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    function handleClickOutside(e) {
+    const handleClickOutside = (e) => {
       if (servicesRef.current && !servicesRef.current.contains(e.target)) {
         setServicesOpen(false);
       }
-    }
+    };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
@@ -43,7 +41,7 @@ export default function Header() {
   return (
     <>
       <header
-        className="border-b bg-white dark:bg-black dark:text-white"
+        className="border-b bg-white text-gray-900 dark:bg-black dark:text-white"
         style={{ borderColor: "rgba(0,0,0,0.08)" }}
       >
         <div className="container mx-auto px-4 py-4">
@@ -61,20 +59,20 @@ export default function Header() {
               </span>
             </Link>
 
-            {/* Desktop nav */}
-            <nav className="hidden md:flex items-center space-x-8">
+            {/* Desktop Nav */}
+            <nav className="hidden md:flex items-center space-x-8 text-gray-800 dark:text-gray-200">
               <NavLink
                 to="/"
-                className="font-serif transition-colors text-gray-800 dark:text-gray-200"
+                className="font-serif transition-colors hover:text-[#0096E6]"
               >
                 Home
               </NavLink>
 
-              {/* Services dropdown */}
+              {/* Services Dropdown */}
               <div className="relative" ref={servicesRef}>
                 <button
-                  onClick={() => setServicesOpen((prev) => !prev)}
-                  className="flex items-center gap-1 font-serif transition-colors text-gray-800 dark:text-gray-200"
+                  onClick={() => setServicesOpen((p) => !p)}
+                  className="flex items-center gap-1 font-serif transition-colors hover:text-[#0096E6] text-gray-800 dark:text-gray-200"
                 >
                   Services
                   <svg
@@ -84,6 +82,7 @@ export default function Header() {
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
+                    className="text-gray-800 dark:text-gray-200"
                   >
                     <path d="m6 9 6 6 6-6" />
                   </svg>
@@ -106,7 +105,7 @@ export default function Header() {
 
               <NavLink
                 to="/about"
-                className="font-serif transition-colors text-gray-800 dark:text-gray-200"
+                className="font-serif transition-colors hover:text-[#0096E6]"
               >
                 About
               </NavLink>
@@ -114,23 +113,24 @@ export default function Header() {
               <HashLink
                 smooth
                 to="/#process"
-                className="font-serif transition-colors text-gray-800 dark:text-gray-200"
+                className="font-serif transition-colors hover:text-[#0096E6]"
               >
                 Our Process
               </HashLink>
+
               <HashLink
                 smooth
                 to="/#contact"
-                className="font-serif transition-colors text-gray-800 dark:text-gray-200"
+                className="font-serif transition-colors hover:text-[#0096E6]"
               >
                 Contact
               </HashLink>
             </nav>
 
-            {/* CTA & Theme Toggle */}
+            {/* CTA + Theme Toggle */}
             <div className="flex items-center space-x-4">
               <button
-                className="hidden md:inline-flex items-center justify-center rounded-md text-sm font-medium h-9 px-4 py-2 shadow-xs font-serif"
+                className="hidden md:inline-flex items-center justify-center rounded-md text-sm font-medium h-9 px-4 py-2 font-serif transition-colors shadow-sm"
                 style={{ backgroundColor: BRAND_BLUE, color: BRAND_WHITE }}
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.backgroundColor = BRAND_BLUE_HOVER)
@@ -142,18 +142,16 @@ export default function Header() {
               >
                 Get Quote
               </button>
-
               <ThemeToggle />
             </div>
 
-            {/* Mobile burger */}
+            {/* Mobile Burger */}
             <button
               aria-label="Toggle menu"
               className="md:hidden inline-flex items-center justify-center w-10 h-10 text-gray-800 dark:text-white hover:text-[#0096E6] transition-colors"
               onClick={() => setOpen((o) => !o)}
             >
               {open ? (
-                // Close (X) Icon
                 <svg
                   width="24"
                   height="24"
@@ -161,11 +159,11 @@ export default function Header() {
                   stroke="currentColor"
                   strokeWidth="2"
                   fill="none"
+                  className="text-gray-800 dark:text-white"
                 >
                   <path d="M18 6 6 18M6 6l12 12" />
                 </svg>
               ) : (
-                // Hamburger Icon
                 <svg
                   width="24"
                   height="24"
@@ -173,6 +171,7 @@ export default function Header() {
                   stroke="currentColor"
                   strokeWidth="2"
                   fill="none"
+                  className="text-gray-800 dark:text-white"
                 >
                   <path d="M3 6h18M3 12h18M3 18h18" />
                 </svg>
@@ -180,16 +179,16 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Mobile drawer */}
+          {/* Mobile Drawer */}
           {open && (
             <div
-              className="md:hidden border-t mt-3 bg-white dark:bg-black dark:text-white"
+              className="md:hidden border-t mt-3 bg-white text-gray-800 dark:bg-black dark:text-white"
               style={{ borderColor: "rgba(0,0,0,0.08)" }}
             >
               <nav className="py-3 flex flex-col">
                 <NavLink
                   to="/"
-                  className="px-2 py-2 font-serif text-gray-800 dark:text-gray-200"
+                  className="px-2 py-2 font-serif hover:text-[#0096E6]"
                   onClick={() => setOpen(false)}
                 >
                   Home
@@ -204,7 +203,7 @@ export default function Header() {
                       <NavLink
                         key={s.label}
                         to={s.to}
-                        className="block py-1 text-sm transition-colors px-2 rounded text-gray-800 dark:text-gray-200 hover:text-[#0096E6]"
+                        className="block py-1 text-sm transition-colors px-2 rounded hover:text-[#0096E6]"
                         onClick={() => setOpen(false)}
                       >
                         {s.label}
@@ -215,7 +214,7 @@ export default function Header() {
 
                 <NavLink
                   to="/about"
-                  className="px-2 py-2 font-serif text-gray-800 dark:text-gray-200"
+                  className="px-2 py-2 font-serif hover:text-[#0096E6]"
                   onClick={() => setOpen(false)}
                 >
                   About
@@ -224,15 +223,16 @@ export default function Header() {
                 <HashLink
                   smooth
                   to="/#process"
-                  className="px-2 py-2 font-serif text-gray-800 dark:text-gray-200"
+                  className="px-2 py-2 font-serif hover:text-[#0096E6]"
                   onClick={() => setOpen(false)}
                 >
                   Our Process
                 </HashLink>
+
                 <HashLink
                   smooth
                   to="/#contact"
-                  className="px-2 py-2 font-serif text-gray-800 dark:text-gray-200"
+                  className="px-2 py-2 font-serif hover:text-[#0096E6]"
                   onClick={() => setOpen(false)}
                 >
                   Contact
