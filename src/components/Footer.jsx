@@ -163,7 +163,7 @@ export default function Footer() {
           {/* Emergency Contact */}
           <div>
             <h4 className="font-semibold mb-4 font-sans text-white dark:text-white">
-              Emergency Contact
+              Contact Support
             </h4>
             <div className="bg-blue-600/20 dark:bg-blue-500/20 p-4 rounded">
               <p className="text-sm mb-2 font-serif text-gray-200 dark:text-gray-300">

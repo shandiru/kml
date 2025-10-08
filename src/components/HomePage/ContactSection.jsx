@@ -37,7 +37,7 @@ export default function ContactSection() {
         <div className="space-y-8">
           {/* Emergency Contact */}
           <ContactCard
-            title="Emergency Contact"
+            title="Contact Support"
             COLORS={COLORS}
             aos="fade-up"
             content={
@@ -125,17 +125,16 @@ export default function ContactSection() {
           >
             <div className="p-8">
               <h3 className="font-bold text-xl mb-3 font-sans">
-                Need Immediate Help?
+               Need a Hand with Your Car?
               </h3>
               <p className="mb-6 font-serif text-base opacity-90">
-                If you've been in an accident, don't wait. Call our emergency
-                line now for immediate assistance and support.
+                Whether it’s repairs, servicing, or diagnostics — we’re here to help. Call us today to get your vehicle sorted by our expert team.
               </p>
               <a
                 href="tel:01615333003"
                 className="inline-block px-6 py-3 rounded-md text-sm font-medium font-serif shadow-md bg-white text-[#0096E6] hover:bg-gray-100 transition"
               >
-                Call Emergency Line
+               Call Us Today
               </a>
             </div>
           </div>
