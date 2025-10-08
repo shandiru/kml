@@ -57,13 +57,12 @@ export default function Header() {
                 KML Accident
               </h1>
               <span className="ml-2 text-sm font-serif text-gray-600 dark:text-gray-300">
-               Repair Centre
+                Repair Centre
               </span>
             </Link>
 
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center space-x-8">
-              {/* ✅ Home Link */}
               <NavLink
                 to="/"
                 className="font-serif transition-colors text-gray-800 dark:text-gray-200"
@@ -95,7 +94,7 @@ export default function Header() {
                       <NavLink
                         key={s.label}
                         to={s.to}
-                        className="block px-4 py-2 text-sm transition-colors text-gray-800 dark:text-gray-200"
+                        className="block px-4 py-2 text-sm transition-colors text-gray-800 dark:text-gray-200 hover:text-[#0096E6]"
                         onClick={() => setServicesOpen(false)}
                       >
                         {s.label}
@@ -150,10 +149,11 @@ export default function Header() {
             {/* Mobile burger */}
             <button
               aria-label="Toggle menu"
-              className="md:hidden inline-flex items-center justify-center w-10 h-10"
+              className="md:hidden inline-flex items-center justify-center w-10 h-10 text-gray-800 dark:text-white hover:text-[#0096E6] transition-colors"
               onClick={() => setOpen((o) => !o)}
             >
               {open ? (
+                // Close (X) Icon
                 <svg
                   width="24"
                   height="24"
@@ -165,6 +165,7 @@ export default function Header() {
                   <path d="M18 6 6 18M6 6l12 12" />
                 </svg>
               ) : (
+                // Hamburger Icon
                 <svg
                   width="24"
                   height="24"
@@ -186,7 +187,6 @@ export default function Header() {
               style={{ borderColor: "rgba(0,0,0,0.08)" }}
             >
               <nav className="py-3 flex flex-col">
-                {/* ✅ Home Link */}
                 <NavLink
                   to="/"
                   className="px-2 py-2 font-serif text-gray-800 dark:text-gray-200"
@@ -204,7 +204,7 @@ export default function Header() {
                       <NavLink
                         key={s.label}
                         to={s.to}
-                        className="block py-1 text-sm transition-colors px-2 rounded text-gray-800 dark:text-gray-200"
+                        className="block py-1 text-sm transition-colors px-2 rounded text-gray-800 dark:text-gray-200 hover:text-[#0096E6]"
                         onClick={() => setOpen(false)}
                       >
                         {s.label}
