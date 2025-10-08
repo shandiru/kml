@@ -41,10 +41,10 @@ export default function Header() {
   return (
     <>
       <header
-        className="border-b bg-white text-gray-900 dark:bg-black dark:text-white fixed top-0 left-0 w-full z-50"
+        className="border-b bg-white text-gray-900 dark:bg-black dark:text-white"
         style={{ borderColor: "rgba(0,0,0,0.08)" }}
       >
-        <div className="container mx-auto px-4 py-3 md:py-4">
+        <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             {/* Brand */}
             <Link to="/" className="flex items-baseline">
@@ -60,7 +60,7 @@ export default function Header() {
             </Link>
 
             {/* Desktop Nav (visible lg and up) */}
-            <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 text-gray-800 dark:text-gray-200">
+            <nav className="hidden lg:flex items-center space-x-8 text-gray-800 dark:text-gray-200">
               <NavLink
                 to="/"
                 className="font-serif transition-colors hover:text-[#0096E6]"
@@ -88,7 +88,7 @@ export default function Header() {
                   </svg>
                 </button>
                 {servicesOpen && (
-                  <div className="absolute top-full left-0 bg-white dark:bg-gray-900 shadow-md rounded-md mt-2 py-2 z-50 w-48 animate-fadeIn">
+                  <div className="absolute top-full left-0 bg-white dark:bg-gray-900 shadow-md rounded-md mt-2 py-2 z-50 w-48">
                     {serviceLinks.map((s) => (
                       <NavLink
                         key={s.label}
@@ -128,7 +128,7 @@ export default function Header() {
             </nav>
 
             {/* CTA + Theme Toggle */}
-            <div className="flex items-center space-x-3 md:space-x-4">
+            <div className="flex items-center space-x-4">
               <button
                 className="hidden lg:inline-flex items-center justify-center rounded-md text-sm font-medium h-9 px-4 py-2 font-serif transition-colors shadow-sm"
                 style={{ backgroundColor: BRAND_BLUE, color: BRAND_WHITE }}
@@ -143,6 +143,7 @@ export default function Header() {
                 Get Quote
               </button>
               <ThemeToggle />
+
               {/* Mobile Burger (visible below lg) */}
               <button
                 aria-label="Toggle menu"
@@ -178,10 +179,10 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Mobile Drawer (for tablet & below) */}
+          {/* Mobile Drawer (for mobile + tablets) */}
           {open && (
             <div
-              className="lg:hidden border-t mt-3 bg-white text-gray-800 dark:bg-black dark:text-white animate-slideDown"
+              className="lg:hidden border-t mt-3 bg-white text-gray-800 dark:bg-black dark:text-white"
               style={{ borderColor: "rgba(0,0,0,0.08)" }}
             >
               <nav className="py-3 flex flex-col">
