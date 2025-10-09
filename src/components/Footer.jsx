@@ -133,7 +133,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm opacity-90">
               <li className="font-serif">
-                <Link to="/support/accident-support" className="hover:text-blue-500">
+                <Link to="/" className="hover:text-blue-500">
                   Accident Support
                 </Link>
               </li>
@@ -143,17 +143,17 @@ export default function Footer() {
                 </Link>
               </li>
               <li className="font-serif">
-                <Link to="/support/courtesy-cars" className="hover:text-blue-500">
+                <Link to="/" className="hover:text-blue-500">
                   Courtesy Cars
                 </Link>
               </li>
               <li className="font-serif">
-                <Link to="/support/free-estimates" className="hover:text-blue-500">
+                <Link to="/" className="hover:text-blue-500">
                   Free Estimates
                 </Link>
               </li>
               <li className="font-serif">
-                <Link to="/support/adas-calibration" className="hover:text-blue-500">
+                <Link to="/services/specialty-services" className="hover:text-blue-500">
                   ADAS Calibration
                 </Link>
               </li>
