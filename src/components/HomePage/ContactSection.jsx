@@ -74,13 +74,14 @@ export default function ContactSection() {
                   icon={<MailIcon />}
                   label="Email"
                   detail={
-                    <a
-                      href="mailto:kmlaccidentrepairecentreltd@gmail.com"
-                      className="font-serif transition hover:underline"
-                      style={{ color: COLORS.primary }}
-                    >
-                      kmlaccidentrepairecentreltd@gmail.com
-                    </a>
+                   <a
+                    href="mailto:kmlaccidentrepairecentreltd@gmail.com"
+                    className="font-serif transition hover:underline text-[15px] sm:text-base"
+                    style={{ color: COLORS.primary }}
+                  >
+                    kmlaccidentrepairecentreltd@gmail.com
+                  </a>
+
                   }
                 />
                 <ContactRow
