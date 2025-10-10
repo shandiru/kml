@@ -20,7 +20,7 @@ export default function App() {
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
       <Header />
-      <main className="flex-1">
+      <main className="">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
