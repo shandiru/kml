@@ -213,7 +213,7 @@ export default function Footer() {
               </h4>
               <div className="bg-blue-600/20 p-4 rounded">
                 <p className="text-sm mb-2 font-serif text-gray-200">
-                  Accident Helpline:
+                  Helpline:
                 </p>
                 <a
                   href="tel:01615333003"
