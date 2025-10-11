@@ -16,7 +16,7 @@ export default function Home() {
             <CollisionDamageTypes />
             <CollisionRepairProcess />
             <AdvancedRepairTechnology />
-            <EmergencyService />
+            {/* <EmergencyService /> */}
             <CollisionRepairServicesbottom />
             {/* Add more sections as needed */}
 

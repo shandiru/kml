@@ -6,6 +6,7 @@ const COLORS = {
   primary: "#0096E6", // brand blue
   lightBg: "#f1f7ff", // light mode background
   darkBg: "#000000",  // dark mode background
+  white: "#FFFFFF",
 };
 
 export default function BodyworkDentRepairs() {
@@ -43,16 +44,15 @@ export default function BodyworkDentRepairs() {
               Get Free Quote
             </button>
 
-            {/* View Gallery Button */}
-            <button
-              className="inline-flex items-center justify-center gap-2 text-sm font-medium h-10 rounded-md px-6 font-serif
-                         border border-gray-300 dark:border-gray-600
-                         text-gray-800 dark:text-gray-200
-                         bg-white dark:bg-gray-900
-                         transition-all hover:shadow-md hover:shadow-[#0096E6]/40 hover:-translate-y-0.5 active:scale-95"
+            {/* Call Button */}
+            <a
+              href="tel:01615333003"
+              className="inline-flex items-center justify-center gap-2 text-sm font-medium h-10 rounded-md px-6 font-serif shadow transition-all hover:scale-[1.02] hover:shadow-lg 
+                         bg-white text-[#0096E6] dark:bg-[#0096E6] dark:text-white"
             >
-              View Gallery
-            </button>
+              <Phone className="h-5 w-5" />
+              Call 0161 533 3003
+            </a>
           </div>
         </div>
       </div>

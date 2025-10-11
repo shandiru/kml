@@ -1,6 +1,7 @@
 // CallToAction.jsx
-import React from "react";
+import React, { useState } from "react";
 import { Phone } from "lucide-react";
+import QuoteModal from "../Insurance-Repairs-Page/QuoteModal";
 
 const COLORS = {
   blue: "#0096E6",   // brand primary
@@ -9,6 +10,13 @@ const COLORS = {
 };
 
 const CallToAction = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Handle phone click
+  const handleCall = () => {
+    window.location.href = "tel:0161 533 3003";
+  };
+
   return (
     <section className="py-16 bg-white dark:bg-black transition-colors duration-300">
       <div className="container mx-auto px-4">
@@ -28,6 +36,7 @@ const CallToAction = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {/* Call Button */}
             <button
+              onClick={handleCall}
               className="inline-flex items-center justify-center gap-2 text-sm font-medium h-10 rounded-md px-6 shadow transition-all hover:scale-[1.02] hover:shadow-lg"
               style={{ backgroundColor: COLORS.blue, color: COLORS.white }}
             >
@@ -35,8 +44,9 @@ const CallToAction = () => {
               Call 0161 533 3003
             </button>
 
-            {/* Book Assessment Button */}
+            {/* Get Quote Button (opens modal) */}
             <button
+              onClick={() => setIsOpen(true)}
               className="inline-flex items-center justify-center gap-2 text-sm font-medium h-10 rounded-md px-6 border transition-all hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-[1.02]"
               style={{
                 borderColor: "#d1d5db", // Tailwind gray-300
@@ -44,11 +54,14 @@ const CallToAction = () => {
                 backgroundColor: "transparent",
               }}
             >
-              Book Assessment
+              Get Quote
             </button>
           </div>
         </div>
       </div>
+
+      {/* Quote Modal */}
+      <QuoteModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </section>
   );
 };

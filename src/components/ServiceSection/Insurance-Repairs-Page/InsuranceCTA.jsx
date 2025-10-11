@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Phone } from "lucide-react";
+import QuoteModal from "../Insurance-Repairs-Page/QuoteModal";
 
 const COLORS = {
   primary: "#0096E6", // Brand blue
@@ -8,6 +9,9 @@ const COLORS = {
 };
 
 export default function InsuranceCTA() {
+  // State for modal visibility
+  const [isOpen, setIsOpen] = useState(false);
+
   // Function to handle phone call
   const handleCall = () => {
     window.location.href = "tel:0161 533 3003";
@@ -41,18 +45,22 @@ export default function InsuranceCTA() {
               Call 0161 533 3003
             </button>
 
-            {/* Request Callback Button */}
+            {/* Get Quote Button (opens modal) */}
             <button
+              onClick={() => setIsOpen(true)}
               className="inline-flex items-center justify-center gap-2 text-sm font-medium h-10 rounded-md px-6 font-serif 
                          border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-200 
                          bg-white dark:bg-gray-900 
                          transition-all hover:shadow-md hover:shadow-[#0096E6]/40 hover:-translate-y-0.5 active:scale-95"
             >
-              Request Callback
+              Get Quote
             </button>
           </div>
         </div>
       </div>
+
+      {/* Quote Modal */}
+      <QuoteModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </section>
   );
 }
