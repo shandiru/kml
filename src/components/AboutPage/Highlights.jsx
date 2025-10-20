@@ -94,8 +94,8 @@ export default function AboutHighlights() {
   ];
 
   return (
-    <section className="py-16 bg-white dark:bg-black transition-colors">
-      <div className="container mx-auto px-4">
+    <section className="py-16 px-6 md:px-10 bg-white dark:bg-black transition-colors">
+      <div className="container mx-auto">
         {/* Intro text */}
         <div className="max-w-4xl mx-auto text-center mb-12">
           <p className="text-lg leading-relaxed font-serif text-gray-700 dark:text-gray-300">
