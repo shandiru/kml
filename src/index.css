@@ -9,3 +9,20 @@ html, body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
+/* index.css */
+
+:root {
+  --color-primary: #0096E6;       /* KML brand blue */
+  --color-primary-hover: #007BC2; /* darker shade for hover */
+  --color-fg: #1f2937;            /* headings (light mode) */
+  --color-muted: #4b5563;         /* body text (light mode) */
+}
+
+/* Optional: dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-fg: #f9fafb;
+    --color-muted: #d1d5db;
+  }
+}
