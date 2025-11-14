@@ -7,21 +7,34 @@
 
     <title>KML</title>
 
-    <!-- ✅ Set initial theme before React mounts to avoid flash -->
+    <!-- 🔥 Favicon -->
+    <link rel="icon" type="image/png" href="/bglogo.png" />
+
+    <!-- 🔥 Open Graph (Social Media Preview) -->
+    <meta property="og:title" content="KML Accident Repair Centre" />
+    <meta property="og:description" content="Professional accident repair, insurance repairs, bodywork, dents, ADAS calibration, alloy refurb, and full automotive restoration services." />
+    <meta property="og:image" content="https://kmlaccidentrepaircentre.co.uk/bglogo.png" />
+    <meta property="og:url" content="https://kmlaccidentrepaircentre.co.uk/" />
+    <meta property="og:type" content="website" />
+
+    <!-- 🔥 Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="KML Accident Repair Centre" />
+    <meta name="twitter:description" content="Premium car accident repair, dents, alloy wheel refurb, bodywork, & insurance-approved repair specialists." />
+    <meta name="twitter:image" content="https://kmlaccidentrepaircentre.co.uk/bglogo.png" />
+
+    <!-- ⚡ Theme Init (unchanged) -->
     <script>
       (() => {
         try {
-          const stored = localStorage.getItem("theme"); // 'dark' | 'light' | null
+          const stored = localStorage.getItem("theme");
           const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
           const useDark = stored ? stored === "dark" : prefersDark;
 
           const root = document.documentElement;
           root.classList.toggle("dark", useDark);
 
-          // ✅ Set browser color-scheme property to match
           root.style.colorScheme = useDark ? "dark" : "light";
-
-          // ✅ Optional: prevent flash of wrong background color
           document.documentElement.style.backgroundColor = useDark ? "#000" : "#fff";
         } catch (e) {
           console.error("Theme init error:", e);
