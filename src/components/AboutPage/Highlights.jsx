@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutHighlights() {
   const COLORS = {
-    primary: "#0096E6", // KML Blue
+    primary: "var(--primary)",
   };
 
   const features = [
