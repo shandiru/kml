@@ -18,13 +18,13 @@ export default function ServicesSection() {
     return () => window.removeEventListener("resize", refresh);
   }, []);
 
+  // Use global CSS variables instead of color codes
   const COLORS = {
-    primary: "#0096E6", // brand blue
-    iconBg: "rgba(0,150,230,0.12)", // translucent brand blue
+    primary: "var(--primary)",
+    iconBg: "color-mix(in srgb, var(--primary) 12%, transparent)", 
   };
 
-  
-const cards = [
+  const cards = [
     {
       title: "Insurance Repairs",
       desc: "Complete insurance claim repairs with direct billing to your insurer",
@@ -87,8 +87,7 @@ const cards = [
     {
       title: "No Fault Claims",
       desc: "Complete support from accident to repair - we handle everything",
-    href: "services/claims-support",
-      
+      href: "services/claims-support",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
           fill="none" stroke={COLORS.primary} strokeWidth="2"
@@ -101,7 +100,7 @@ const cards = [
     {
       title: "ADAS Calibrations",
       desc: "Advanced driver assistance system calibration after repairs",
-      href:"services/specialty-services",
+      href: "services/specialty-services",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
           fill="none" stroke={COLORS.primary} strokeWidth="2"
@@ -129,7 +128,7 @@ const cards = [
     },
     {
       title: "Alloy Wheel Refurb",
-      href:"/services/specialty-services",
+      href: "/services/specialty-services",
       desc: "Complete alloy wheel refurbishment and repair services",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -144,7 +143,7 @@ const cards = [
     {
       title: "Vandalism Repairs",
       desc: "Quick and professional vandalism damage repair services",
-      href :"/services/specialty-services",
+      href: "/services/specialty-services",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
           fill="none" stroke={COLORS.primary} strokeWidth="2"
@@ -157,7 +156,6 @@ const cards = [
       ),
     },
   ];
-
 
   return (
     <section
@@ -184,8 +182,8 @@ const cards = [
               className="flex flex-col justify-between rounded-xl py-8 px-6 shadow-md border
                          transition-all duration-300 bg-gray-50 dark:bg-gray-900
                          border-gray-200 dark:border-gray-700
-                         hover:shadow-[0_0_20px_rgba(0,150,230,0.6)]
-                         active:shadow-[0_0_25px_rgba(0,150,230,0.8)]
+                         hover:shadow-[0_0_20px_var(--primary)]
+                         active:shadow-[0_0_25px_var(--primary-hover)]
                          hover:-translate-y-1 active:scale-[0.98]"
               data-aos="zoom-in"
               data-aos-delay={i * 100}
@@ -210,13 +208,21 @@ const cards = [
                 </p>
               </div>
 
-              {/* Read More Button inside box */}
+              {/* Read More Button */}
               <div className="mt-6 flex justify-center">
                 <a
                   href={c.href || "#"}
                   className="inline-block px-5 py-2 text-sm font-medium rounded-full 
-                             bg-[#0096E6] text-white shadow-md
-                             hover:bg-[#007bbf] transition-colors"
+                             text-white shadow-md transition-colors"
+                  style={{
+                    backgroundColor: "var(--primary)",
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.backgroundColor = "var(--primary-hover)")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.backgroundColor = "var(--primary)")
+                  }
                 >
                   Read More
                 </a>
@@ -228,11 +234,3 @@ const cards = [
     </section>
   );
 }
-
-
-
-
-
-
-
- 

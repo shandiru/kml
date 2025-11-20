@@ -12,9 +12,9 @@ import "swiper/css/pagination";
 import "aos/dist/aos.css";
 
 const BRAND = {
-  primary: "#0096E6", // blue
-  primaryHover: "#007BC2",
-  text: "#1f2937",
+  primary: "var(--primary)",
+  primaryHover: "var(--primary-hover)",
+  text: "var(--fg)",
 };
 
 const testimonials = [
@@ -64,9 +64,9 @@ function InitialAvatar({ name }) {
     <div
       className="w-12 h-12 min-w-[3rem] rounded-full flex items-center justify-center font-semibold text-base"
       style={{
-        backgroundColor: "rgba(0,150,230,0.12)",
-        border: `1px solid ${BRAND.primary}`,
-        color: BRAND.primary,
+        backgroundColor: "color-mix(in srgb, var(--primary) 12%, transparent)",
+        border: `1px solid var(--primary)`,
+        color: "var(--primary)",
       }}
     >
       {initials}
@@ -78,28 +78,28 @@ export default function ReviewsSlider() {
   useEffect(() => {
     AOS.init({
       duration: 800,
-      once: false, // repeat animations
-      mirror: true, // animate back on scroll up
+      once: false,
+      mirror: true,
       offset: 100,
     });
   }, []);
 
   return (
     <section
-      className="w-full bg-white dark:bg-black text-[#1f2937] dark:text-white py-16 px-4 relative transition-colors"
+      className="w-full bg-white dark:bg-black text-[var(--fg)] dark:text-white py-16 px-4 relative transition-colors"
       id="testimonial"
     >
       <style jsx>{`
         .swiper-pagination-bullet {
           background-color: transparent;
-          border: 2px solid ${BRAND.primary};
+          border: 2px solid var(--primary);
           width: 10px;
           height: 10px;
           opacity: 1;
           margin: 0 6px !important;
         }
         .swiper-pagination-bullet-active {
-          background-color: ${BRAND.primary};
+          background-color: var(--primary);
         }
       `}</style>
 
@@ -108,10 +108,11 @@ export default function ReviewsSlider() {
         <div className="text-center mb-12" data-aos="fade-up">
           <h2
             className="text-4xl md:text-6xl font-bold mb-5 font-sans"
-            style={{ color: BRAND.primary }}
+            style={{ color: "var(--primary)" }}
           >
             What Our Customers Say
           </h2>
+
           <p className="text-gray-600 dark:text-gray-300 text-sm md:text-lg font-semibold">
             Don’t just take our word for it – hear from our satisfied customers
           </p>
@@ -143,17 +144,19 @@ export default function ReviewsSlider() {
                 data-aos="zoom-in"
                 data-aos-delay={idx * 100}
               >
-                <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-[#0096E6]/5 via-transparent to-transparent" />
+                <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-[var(--primary)]/5 via-transparent to-transparent" />
 
                 <div>
                   <div className="flex items-center gap-3">
                     <InitialAvatar name={t.name} />
+
                     <div className="flex-1">
-                      <div className="flex items-center gap-1 text-[#0096E6]">
+                      <div className="flex items-center gap-1 text-[var(--primary)]">
                         {Array.from({ length: 5 }).map((_, i) => (
-                          <FiStar key={i} className="w-4 h-4 fill-[#0096E6]" />
+                          <FiStar key={i} className="w-4 h-4 fill-[var(--primary)]" />
                         ))}
                       </div>
+
                       <div className="mt-1 text-xs text-gray-500 dark:text-gray-400">
                         Verified review
                       </div>
@@ -166,21 +169,19 @@ export default function ReviewsSlider() {
                 </div>
 
                 <div className="mt-5 flex items-center justify-between">
-                  <div
-                    className="font-semibold"
-                    style={{ color: BRAND.primary }}
-                  >
+                  <div className="font-semibold" style={{ color: "var(--primary)" }}>
                     {t.name}
                   </div>
+
                   <div
                     className="flex items-center gap-1 px-2 py-1 rounded-full border text-sm"
                     style={{
-                      borderColor: `${BRAND.primary}99`,
-                      color: BRAND.primary,
+                      borderColor: "color-mix(in srgb, var(--primary) 60%, transparent)",
+                      color: "var(--primary)",
                     }}
                   >
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <FiStar key={i} className="w-3.5 h-3.5 fill-[#0096E6]" />
+                      <FiStar key={i} className="w-3.5 h-3.5 fill-[var(--primary)]" />
                     ))}
                   </div>
                 </div>
@@ -196,14 +197,37 @@ export default function ReviewsSlider() {
           data-aos-delay="200"
         >
           <button
-            className="swiper-button-prev-custom w-10 h-10 flex items-center justify-center rounded-full border transition
-                       border-[#0096E6] text-[#0096E6] hover:bg-[#0096E6] hover:text-white active:scale-95"
+            className="swiper-button-prev-custom w-10 h-10 flex items-center justify-center rounded-full border transition"
+            style={{
+              borderColor: "var(--primary)",
+              color: "var(--primary)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "var(--primary)";
+              e.currentTarget.style.color = "#fff";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "transparent";
+              e.currentTarget.style.color = "var(--primary)";
+            }}
           >
             <BsArrowLeft className="w-5 h-5" />
           </button>
+
           <button
-            className="swiper-button-next-custom w-10 h-10 flex items-center justify-center rounded-full border transition
-                       border-[#0096E6] text-[#0096E6] hover:bg-[#0096E6] hover:text-white active:scale-95"
+            className="swiper-button-next-custom w-10 h-10 flex items-center justify-center rounded-full border transition"
+            style={{
+              borderColor: "var(--primary)",
+              color: "var(--primary)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "var(--primary)";
+              e.currentTarget.style.color = "#fff";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "transparent";
+              e.currentTarget.style.color = "var(--primary)";
+            }}
           >
             <BsArrowRight className="w-5 h-5" />
           </button>
@@ -219,8 +243,16 @@ export default function ReviewsSlider() {
             href="https://www.google.com/search?q=Kml+accident+repair+centre+ltd+-+Car+Body+Repair+Reviews"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 rounded-md text-white text-sm font-semibold transition
-                       bg-[#0096E6] hover:bg-[#007BC2] active:scale-95"
+            className="inline-flex items-center px-6 py-3 rounded-md text-white text-sm font-semibold transition"
+            style={{
+              backgroundColor: "var(--primary)",
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.backgroundColor = "var(--primary-hover)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.backgroundColor = "var(--primary)")
+            }
           >
             Leave a Review on Google
           </a>
@@ -229,4 +261,3 @@ export default function ReviewsSlider() {
     </section>
   );
 }
-

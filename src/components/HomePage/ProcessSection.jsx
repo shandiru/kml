@@ -18,8 +18,8 @@ export default function ProcessSection() {
   }, []);
 
   const COLORS = {
-    primary: "#0096E6",
-    iconBg: "rgba(0,150,230,0.14)",
+    primary: "var(--primary)",
+    iconBg: "color-mix(in srgb, var(--primary) 14%, transparent)",
   };
 
   const steps = [
@@ -109,8 +109,8 @@ export default function ProcessSection() {
               key={i}
               className="text-center relative rounded-xl border py-6 shadow-sm
                          transition-all duration-300
-                         hover:shadow-[0_0_20px_rgba(0,150,230,0.6)]
-                         active:shadow-[0_0_25px_rgba(0,150,230,0.8)]
+                         hover:shadow-[0_0_20px_var(--primary)]
+                         active:shadow-[0_0_25px_var(--primary-hover)]
                          hover:-translate-y-1 active:scale-[0.98]
                          cursor-pointer
                          bg-gray-50 dark:bg-gray-900
@@ -139,12 +139,25 @@ export default function ProcessSection() {
               {/* Connector line */}
               {i < steps.length - 1 && (
                 <>
-                  {/* Desktop: horizontal */}
+                  {/* Desktop */}
                   <div className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2">
-                    <div className="w-6 h-0.5 bg-blue-400/40 dark:bg-blue-600/40" />
+                    <div
+                      className="w-6 h-0.5"
+                      style={{
+                        backgroundColor:
+                          "color-mix(in srgb, var(--primary) 40%, transparent)",
+                      }}
+                    />
                   </div>
-                  {/* Mobile: vertical */}
-                  <div className="block lg:hidden mt-6 mx-auto w-0.5 h-6 bg-blue-400/40 dark:bg-blue-600/40" />
+
+                  {/* Mobile */}
+                  <div
+                    className="block lg:hidden mt-6 mx-auto w-0.5 h-6"
+                    style={{
+                      backgroundColor:
+                        "color-mix(in srgb, var(--primary) 40%, transparent)",
+                    }}
+                  />
                 </>
               )}
             </div>

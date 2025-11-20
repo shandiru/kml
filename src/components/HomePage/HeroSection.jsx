@@ -4,8 +4,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function HeroSection() {
-  const PRIMARY = "#0096E6"; // KML brand blue
-  const PRIMARY_HOVER = "#007BC2";
   const PHONE = "0161 533 3003";
   const TEL_LINK = "tel:0161 533 3003";
 
@@ -30,7 +28,7 @@ export default function HeroSection() {
         playsInline
       ></video>
 
-      {/* Optional dark overlay for better text contrast */}
+      {/* Optional dark overlay */}
       <div className="absolute inset-0 bg-black/40 z-0"></div>
 
       <div className="relative z-10 container mx-auto px-4">
@@ -41,7 +39,7 @@ export default function HeroSection() {
           >
             Your Trusted Partner in
             <span className="block md:inline"> </span>
-            <span style={{ color: PRIMARY }}> Insurance Repairs</span>
+            <span style={{ color: "var(--primary)" }}>Insurance Repairs</span>
           </h1>
 
           <p
@@ -61,20 +59,22 @@ export default function HeroSection() {
             data-aos="fade-up"
             data-aos-delay="400"
           >
+            {/* PRIMARY BUTTON */}
             <a
               href="#contact"
-              className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium rounded-md h-10 px-6 font-serif shadow-xs transition-colors"
-              style={{ backgroundColor: PRIMARY, color: "#ffffff" }}
+              className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium rounded-md h-10 px-6 font-serif shadow-xs transition-colors text-white"
+              style={{ backgroundColor: "var(--primary)" }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor = PRIMARY_HOVER)
+                (e.currentTarget.style.backgroundColor = "var(--primary-hover)")
               }
               onMouseLeave={(e) =>
-                (e.currentTarget.style.backgroundColor = PRIMARY)
+                (e.currentTarget.style.backgroundColor = "var(--primary)")
               }
             >
               Get Free Estimate
             </a>
 
+            {/* CALL NOW BUTTON */}
             <a
               href={TEL_LINK}
               className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium rounded-md h-10 px-6 font-serif border shadow-xs transition-colors text-white border-gray-300"
@@ -82,9 +82,9 @@ export default function HeroSection() {
                 backgroundColor: "transparent",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = PRIMARY;
+                e.currentTarget.style.backgroundColor = "var(--primary)";
                 e.currentTarget.style.color = "#ffffff";
-                e.currentTarget.style.borderColor = PRIMARY;
+                e.currentTarget.style.borderColor = "var(--primary)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = "transparent";
@@ -96,7 +96,7 @@ export default function HeroSection() {
             </a>
           </div>
 
-          {/* Feature cards */}
+          {/* Feature Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             {[
               {
@@ -147,7 +147,7 @@ export default function HeroSection() {
                     height="32"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke={PRIMARY}
+                    stroke="var(--primary)"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"

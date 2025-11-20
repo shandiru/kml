@@ -10,8 +10,8 @@ export default function ContactSection() {
   }, []);
 
   const COLORS = {
-    primary: "#0096E6",
-    primaryHover: "#007BC2",
+    primary: "var(--primary)",
+    primaryHover: "var(--primary-hover)",
     cardBg: "#ffffff",
     cardBorder: "#dbe7f2",
   };
@@ -49,7 +49,7 @@ export default function ContactSection() {
                     <a
                       href="tel:01615333003"
                       className="text-lg font-bold font-serif transition hover:underline"
-                      style={{ color: COLORS.primary }}
+                      style={{ color: "var(--primary)" }}
                     >
                       0161 533 3003
                     </a>
@@ -74,24 +74,24 @@ export default function ContactSection() {
                   icon={<MailIcon />}
                   label="Email"
                   detail={
-                   <a
-                    href="mailto:kmlaccidentrepairecentreltd@gmail.com"
-                    className="font-serif transition hover:underline text-[15px] sm:text-base"
-                    style={{ color: COLORS.primary }}
-                  >
-                    kmlaccidentrepairecentreltd@gmail.com
-                  </a>
-
+                    <a
+                      href="mailto:kmlaccidentrepairecentreltd@gmail.com"
+                      className="font-serif transition hover:underline text-[15px] sm:text-base"
+                      style={{ color: "var(--primary)" }}
+                    >
+                      kmlaccidentrepairecentreltd@gmail.com
+                    </a>
                   }
                 />
+
                 <ContactRow
                   icon={<LocationIcon />}
                   label="Location"
                   detail={
                     <a
                       href="https://www.google.com/maps?q=Haslam+Street,+Manchester,+M24+2,+United+Kingdom"
-                      className="font-serif underline transition hover:text-[#007BC2]"
-                      style={{ color: COLORS.primary }}
+                      className="font-serif underline transition hover:text-[var(--primary-hover)]"
+                      style={{ color: "var(--primary)" }}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -99,6 +99,7 @@ export default function ContactSection() {
                     </a>
                   }
                 />
+
                 <ContactRow
                   icon={<ClockIcon />}
                   label="Business Hours"
@@ -118,24 +119,26 @@ export default function ContactSection() {
           <div
             className="rounded-xl shadow-md overflow-hidden border text-center transition hover:shadow-lg"
             style={{
-              backgroundColor: COLORS.primary,
-              borderColor: COLORS.primary,
+              backgroundColor: "var(--primary)",
+              borderColor: "var(--primary)",
               color: "#ffffff",
             }}
             data-aos="zoom-in"
           >
             <div className="p-8">
               <h3 className="font-bold text-xl mb-3 font-sans">
-               Need a Hand with Your Car?
+                Need a Hand with Your Car?
               </h3>
               <p className="mb-6 font-serif text-base opacity-90">
-                Whether it’s repairs, servicing, or diagnostics — we’re here to help. Call us today to get your vehicle sorted by our expert team.
+                Whether it’s repairs, servicing, or diagnostics — we’re here to
+                help. Call us today to get your vehicle sorted by our expert
+                team.
               </p>
               <a
                 href="tel:01615333003"
-                className="inline-block px-6 py-3 rounded-md text-sm font-medium font-serif shadow-md bg-white text-[#0096E6] hover:bg-gray-100 transition"
+                className="inline-block px-6 py-3 rounded-md text-sm font-medium font-serif shadow-md bg-white text-[var(--primary)] hover:bg-gray-100 transition"
               >
-               Call Us Today
+                Call Us Today
               </a>
             </div>
           </div>
@@ -183,7 +186,7 @@ function PhoneIcon() {
       className="h-5 w-5"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      stroke="#0096E6"
+      stroke="var(--primary)"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -193,13 +196,14 @@ function PhoneIcon() {
     </svg>
   );
 }
+
 function MailIcon() {
   return (
     <svg
       className="h-5 w-5"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      stroke="#0096E6"
+      stroke="var(--primary)"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -210,13 +214,14 @@ function MailIcon() {
     </svg>
   );
 }
+
 function LocationIcon() {
   return (
     <svg
       className="h-5 w-5"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      stroke="#0096E6"
+      stroke="var(--primary)"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -227,13 +232,14 @@ function LocationIcon() {
     </svg>
   );
 }
+
 function ClockIcon() {
   return (
     <svg
       className="h-5 w-5"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      stroke="#0096E6"
+      stroke="var(--primary)"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
