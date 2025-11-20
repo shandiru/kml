@@ -2,7 +2,7 @@
 import React from "react";
 
 const COLORS = {
-  brand: "#0096E6", // Brand Blue
+ brand: "var(--primary)", // Blue
   white: "#FFFFFF",
   black: "#000000",
 };

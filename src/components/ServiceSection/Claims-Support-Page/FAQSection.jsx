@@ -1,7 +1,8 @@
 // File: FAQSection.jsx
 import React from "react";
 
-const BRAND_BLUE = "#0096E6";
+const BRAND_BLUE = "var(--primary)";
+
 
 const FAQSection = () => {
   return (

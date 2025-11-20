@@ -1,7 +1,7 @@
 // File: WhyChooseClaimsSupport.jsx
 import React from "react";
 
-const BRAND = "#0096E6";
+const BRAND = "var(--primary)";
 
 export default function WhyChooseClaimsSupport() {
   const items = [

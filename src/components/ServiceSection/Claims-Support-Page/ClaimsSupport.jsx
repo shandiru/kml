@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import QuoteModal from "../Insurance-Repairs-Page/QuoteModal";
 
 const COLORS = {
-  brand: "#0096E6", // Blue
+ brand: "var(--primary)", // Blue
   white: "#FFFFFF",
   black: "#000000",
 };

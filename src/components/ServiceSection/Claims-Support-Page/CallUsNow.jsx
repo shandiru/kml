@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import QuoteModal from "../Insurance-Repairs-Page/QuoteModal";
 
-const BRAND_BLUE = "#0096E6";
+const BRAND_BLUE = "var(--primary)";
+
 
 const CallUsNow = () => {
   const [isOpen, setIsOpen] = useState(false); // ✅ Modal state
