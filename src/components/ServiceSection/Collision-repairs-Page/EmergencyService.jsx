@@ -4,7 +4,7 @@ import { TriangleAlert, Phone, Clock } from "lucide-react";
 import QuoteModal from "../Insurance-Repairs-Page/QuoteModal";
 
 const COLORS = {
-  blue: "#0096E6",
+  blue: "var(--primary)", // brand accent
 };
 
 export default function EmergencyService() {

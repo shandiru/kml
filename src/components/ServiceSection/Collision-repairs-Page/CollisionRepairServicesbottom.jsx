@@ -4,7 +4,7 @@ import { Phone } from "lucide-react";
 import QuoteModal from "../Insurance-Repairs-Page/QuoteModal";
 
 const COLORS = {
-  blue: "#0096E6", // brand blue
+  blue: "var(--primary)", // brand accent
 };
 
 export default function CollisionRepairServices() {

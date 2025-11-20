@@ -2,7 +2,7 @@ import React from "react";
 import { Car, Wrench, Shield } from "lucide-react";
 
 const COLORS = {
-  blue: "#0096E6",   // brand accent
+ blue: "var(--primary)", // brand accent
   white: "#FFFFFF",  // light mode background
   black: "#000000",  // dark mode background
 };

@@ -1,7 +1,7 @@
 import React from "react";
 
 const COLORS = {
-  blue: "#0096E6",
+  blue: "var(--primary)",
   white: "#FFFFFF",
   black: "#000000",
 };
