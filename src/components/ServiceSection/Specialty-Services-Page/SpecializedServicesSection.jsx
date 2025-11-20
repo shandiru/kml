@@ -4,7 +4,7 @@ import { FiPhone } from "react-icons/fi";
 import QuoteModal from "../Insurance-Repairs-Page/QuoteModal";
 
 const COLORS = {
-  brand: "#0096E6", // blue
+  blue: "var(--primary)", // brand accent
   white: "#FFFFFF",
   black: "#000000",
 };

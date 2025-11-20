@@ -3,7 +3,7 @@ import { FiPhone } from "react-icons/fi";
 import QuoteModal from "../Insurance-Repairs-Page/QuoteModal";
 
 const COLORS = {
-  blue: "#0096E6", // brand blue
+  blue: "var(--primary)", // brand accent
 };
 
 export default function SpecializedServices() {
