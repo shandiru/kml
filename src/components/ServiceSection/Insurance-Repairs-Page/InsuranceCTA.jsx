@@ -3,7 +3,7 @@ import { Phone } from "lucide-react";
 import QuoteModal from "../Insurance-Repairs-Page/QuoteModal";
 
 const COLORS = {
-  primary: "#0096E6", // Brand blue
+  primary: "var(--primary)", // Brand Blue,
   black: "#000000",
   white: "#FFFFFF",
 };

@@ -7,8 +7,8 @@ export default function HeroSection() {
 
   // ✅ Brand colors
   const COLORS = {
-    primary: "#0096E6", // CTA Blue
-    heading: "#1f2937", // slate-800
+    primary: "var(--primary)",      // replaced #0096E6
+  heading: "var(--fg)", 
     body: "#374151", // slate-700
     bgLight: "#f1f7ff", // light background
     bgDark: "#000000", // dark background

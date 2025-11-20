@@ -3,8 +3,8 @@ import { Shield, FileText, Car, CheckCircle2 } from "lucide-react";
 
 // ✅ Brand palette
 const COLORS = {
-  primary: "#0096E6", // CTA Blue
-  heading: "#1f2937", // slate-800
+   primary: "var(--primary)",   // was #0096E6
+  heading: "var(--fg)",        // was #1f2937
   text: "#374151", // slate-700
   cardLight: "#f9fafb", // light background
   cardDark: "#111827", // dark card

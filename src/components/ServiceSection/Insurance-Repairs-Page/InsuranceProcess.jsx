@@ -1,7 +1,8 @@
 import React from "react";
 
 const COLORS = {
-  primary: "#0096E6", // Brand Blue
+ primary: "var(--primary)", // Brand Blue
+
 };
 
 const STEPS = [
