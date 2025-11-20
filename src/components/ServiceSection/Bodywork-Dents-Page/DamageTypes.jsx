@@ -2,7 +2,7 @@ import React from "react";
 import { CircleCheckBig } from "lucide-react";
 
 const COLORS = {
-  blue: "#0096E6", // accent
+  blue: "var(--primary)",   // brand accent
   black: "#000000", // dark bg & text
   white: "#FFFFFF", // light bg & text
 };

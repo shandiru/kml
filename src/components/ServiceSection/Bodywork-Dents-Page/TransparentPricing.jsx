@@ -3,7 +3,7 @@ import React from "react";
 import { Clock, CheckCircle2, Phone } from "lucide-react";
 
 const COLORS = {
-  blue: "#0096E6",   // brand blue
+  blue: "var(--primary)",   // brand accent
   black: "#000000",  // dark bg
   white: "#FFFFFF",  // light bg
 };

@@ -4,7 +4,7 @@ import { Phone } from "lucide-react";
 import QuoteModal from "../Insurance-Repairs-Page/QuoteModal";
 
 const COLORS = {
-  blue: "#0096E6",   // brand primary
+  blue: "var(--primary)",   // brand accent
   black: "#000000",  // dark mode bg
   white: "#FFFFFF",  // light mode bg
 };

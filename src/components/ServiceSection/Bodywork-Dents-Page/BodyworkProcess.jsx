@@ -1,7 +1,7 @@
 import React from "react";
 
 const COLORS = {
-  blue: "#0096E6",   // brand accent
+  blue: "var(--primary)",   // brand accent
   black: "#000000",  // dark mode background + headings
   white: "#FFFFFF",  // light mode background + text
 };
