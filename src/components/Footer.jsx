@@ -231,7 +231,7 @@ export default function Footer() {
           {/* Bottom Bar */}
           <div className="border-t border-gray-700 mt-10 pt-6 text-center">
             <p className="text-sm opacity-75 font-serif text-gray-400">
-              © 2025 KMLservices. All rights reserved. Professional automotive
+              © 2026 KMLservices. All rights reserved. Professional automotive
               repair services nationwide.
             </p>
             <div className="flex justify-center gap-4 mt-3 text-sm font-serif text-gray-400 flex-wrap">
