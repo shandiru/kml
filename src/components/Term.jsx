@@ -78,9 +78,9 @@ const TermsConditions = () => {
                       </p>
                       <div className="text-white">
                           <p><strong>KMLservices Insurance Repairs</strong></p>
-                          <p>Email: <a href="mailto:kmlaccidentrepairecentreltd@gmail.com" className="text-[#0096E6] hover:underline">kmlaccidentrepairecentreltd@gmail.com</a></p>
-                          <p>Phone: 0161 533 3003</p>
-                          {/* <p>Address: 132 Station Rd, Glenfield, Leicester LE3 8BR</p> */}
+                        <p>Email: <a href="mailto:kmlaccidentrepairecentreltd@gmail.com" className="text-[#0096E6] hover:underline">kmlaccidentrepairecentreltd@gmail.com</a></p>
+                        <p>Phone: 0161 533 3003</p>
+                        <p>Address: Haslam Street, Manchester, M24 2, United Kingdom</p>
                       </div>
                   </section>
               </div>
