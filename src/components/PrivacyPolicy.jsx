@@ -111,7 +111,7 @@ const PrivacyPolicy = () => {
                     </p>
                     <div className="text-white">
                         <p><strong>KMLservices Insurance Repairs</strong></p>
-                        <p>Email: <a href="mailto:kmlaccidentrepairecentreltd@gmail.com" className="text-[#0096E6] hover:underline">kmlaccidentrepairecentreltd@gmail.com</a></p>
+                        <p>Email: <a href="mailto:kmlaccidentrepaircentreltd@gmail.com" className="text-[#0096E6] hover:underline">kmlaccidentrepaircentreltd@gmail.com</a></p>
                         <p>Phone: 0161 533 3003</p>
                         <p>Address: Haslam Street, Manchester, M24 2, United Kingdom</p>
                     </div>

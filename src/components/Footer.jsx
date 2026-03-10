@@ -75,12 +75,12 @@ export default function Footer() {
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                   </svg>
                   <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=kmlaccidentrepairecentreltd@gmail.com"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=kmlaccidentrepaircentreltd@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-serif hover:text-blue-500 transition-colors break-words max-w-[260px] text-sm md:text-[13px] lg:text-sm"
                   >
-                    kmlaccidentrepairecentreltd@gmail.com
+                    kmlaccidentrepaircentreltd@gmail.com
                   </a>
                 </div>
               </div>

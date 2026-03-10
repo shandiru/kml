@@ -75,11 +75,11 @@ export default function ContactSection() {
                   label="Email"
                   detail={
                     <a
-                      href="mailto:kmlaccidentrepairecentreltd@gmail.com"
+                      href="mailto:kmlaccidentrepaircentreltd@gmail.com"
                       className="font-serif transition hover:underline text-[15px] sm:text-base"
                       style={{ color: "var(--primary)" }}
                     >
-                      kmlaccidentrepairecentreltd@gmail.com
+                      kmlaccidentrepaircentreltd@gmail.com
                     </a>
                   }
                 />
