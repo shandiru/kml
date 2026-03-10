@@ -89,13 +89,13 @@ export default function ContactSection() {
                   label="Location"
                   detail={
                     <a
-                      href="https://www.google.com/maps?q=Haslam+Street,+Manchester,+M24+2,+United+Kingdom"
+                      href="https://maps.app.goo.gl/9zZBZhmjPNcMwqhE6"
                       className="font-serif underline transition hover:text-[var(--primary-hover)]"
                       style={{ color: "var(--primary)" }}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Haslam Street, Manchester, M24 2, United Kingdom
+                      Unit 4 Haslam St, Middleton, Manchester M24 2AP, United Kingdom
                     </a>
                   }
                 />

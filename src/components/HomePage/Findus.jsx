@@ -14,7 +14,7 @@ const FindUs = () => {
   }, []);
 
   const directionsUrl =
-    "https://www.google.com/maps/place/Kml+accident+repair+centre+ltd+-+Car+Body+Repair/@53.5418439,-2.1795345,518m/data=!3m2!1e3!4b1!4m6!3m5!1s0x487bb16ad315b723:0x8f66ab0eb640ec4c!8m2!3d53.5418439!4d-2.1769596!16s%2Fg%2F11sgqyljpr?entry=ttu";
+    "https://maps.app.goo.gl/9zZBZhmjPNcMwqhE6";
 
   return (
     <section
@@ -37,7 +37,7 @@ const FindUs = () => {
         >
           <iframe
             title="Google Map - KML Accident Repair Centre"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2366.382205235293!2d-2.1795345!3d53.5418439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb16ad315b723%3A0x8f66ab0eb640ec4c!2sKml%20accident%20repair%20centre%20ltd%20-%20Car%20Body%20Repair!5e0!3m2!1sen!2suk!4v1690000000000!5m2!1sen!2suk"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2370.8919254695984!2d-2.1769596!3d53.5418439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb16ad315b723%3A0x8f66ab0eb640ec4c!2sKml%20accident%20repair%20centre%20ltd%20-%20Car%20Body%20Repair!5e0!3m2!1sen!2slk!4v1773154011927!5m2!1sen!2suk"
             width="100%"
             height="100%"
             allowFullScreen
@@ -54,7 +54,7 @@ const FindUs = () => {
         >
           <span className="font-semibold">KML Accident Repair Centre Ltd</span>
           <br />
-          Unit 4 Haslam St, Middleton,
+          Unit 4 Haslam St, Middleton,  
           <br />
           Manchester M24 2AP, United Kingdom
         </p>
