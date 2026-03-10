@@ -80,7 +80,7 @@ const TermsConditions = () => {
                           <p><strong>KMLservices Insurance Repairs</strong></p>
                         <p>Email: <a href="mailto:kmlaccidentrepaircentreltd@gmail.com" className="text-[#0096E6] hover:underline">kmlaccidentrepaircentreltd@gmail.com</a></p>
                         <p>Phone: 0161 533 3003</p>
-                        <p>Address: Haslam Street, Manchester, M24 2, United Kingdom</p>
+                        <p>Address: Unit 4 Haslam St, Middleton, Manchester M24 2AP, United Kingdom</p>
                       </div>
                   </section>
               </div>
